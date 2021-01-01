@@ -45,7 +45,7 @@ function setup() {
 	})
 
 	var canvas = createCanvas(800, 700);
-	canvas.parent('subContainer');
+	canvas.parent('containerDiv');
 	background(51);
 
 
