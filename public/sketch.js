@@ -3,6 +3,8 @@ var width;
 width = document.getElementById('brush-width').value;
 
 function setup() {
+	width = document.getElementById('brush-width').value;
+
 	document.getElementById('brush-width').addEventListener('input', () => {
 		width = document.getElementById('brush-width').value;
 	});
