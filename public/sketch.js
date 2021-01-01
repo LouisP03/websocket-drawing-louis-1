@@ -28,7 +28,7 @@ function setup() {
 			bwidth = 1;
 			document.getElementById('brush-width').value = 1;
 		};
-		if (Number.isInteger(parseInt(bwidth)) == False) {
+		if (Number.isInteger(parseInt(bwidth)) == false) {
 			bwidth = 36;
 			document.getElementById('brush-width').value = 36;
 			alert('Invalid entry. Using default width value of 36px.');
