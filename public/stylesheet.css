@@ -6,6 +6,7 @@
 }
 
 #subContainer {
+  position: relative;
   width: 1000px;
   padding: 10px;
   background: #f99f53;
@@ -14,7 +15,9 @@
 }
 
 .slidecontainer {
+  position: fixed;
   width: 800px;
+  margin: 0 auto;
 }
 
 .slider {
