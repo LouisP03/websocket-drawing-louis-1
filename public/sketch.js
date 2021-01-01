@@ -53,12 +53,11 @@ function mouseDragged() {
 
 	socket.emit('mouse', data);
 
-
 	noStroke();
 	fill(255);
 	ellipse(mouseX, mouseY, width, width);
 	strokeWeight(data.brushWidth);
-	stroke(255, 0, 100)
+	stroke(255);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 }
 
