@@ -53,6 +53,7 @@
 }
 
 .containerDiv {
+  position: absolute;
   background: blue;
-  margin-top: 100px;
+  top: 300px;
 }
