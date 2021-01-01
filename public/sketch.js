@@ -68,7 +68,7 @@ function mouseDragged() {
 
 	noStroke();
 	fill(255);
-	ellipse(mouseX, mouseY, width, width);
+	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
 	strokeWeight(data.brushWidth);
 	stroke(255);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
