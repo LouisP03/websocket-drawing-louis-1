@@ -4,7 +4,7 @@ function setup() {
 	createCanvas(400, 300);
 	background(51);
 
-	socket = io.connect('http://localhost:3000/')
+	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(255, 0, 100);
