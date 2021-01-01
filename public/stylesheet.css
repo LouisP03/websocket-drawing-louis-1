@@ -8,6 +8,7 @@
 #subContainer {
   position: relative;
   width: 1000px;
+  height: 100%;
   padding: 10px;
   background: #f99f53;
   text-align: center;
