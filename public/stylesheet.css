@@ -71,53 +71,53 @@
   opacity: 1;
 }
 
-.colourSlider#red::-webkit-slider-thumb {
+.colourSlider#redc::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
-  background: red;
+  background: rgb(255, 0, 0);
   cursor: pointer;
 }
 
-.colourSlider#red::-moz-range-thumb {
+.colourSlider#redc::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: red;
+  background: rgb(255, 0, 0);
   cursor: pointer;
 }
 /*--------------------------------------------------------------------------*/
 
-.colourSlider#green::-webkit-slider-thumb {
+.colourSlider#greenc::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
-  background: green;
+  background: rgb(0, 255, 0);
   cursor: pointer;
 }
 
-.colourSlider#green::-moz-range-thumb {
+.colourSlider#greenc::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: green;
+  background: rgb(0, 255, 0);
   cursor: pointer;
 }
 /*--------------------------------------------------------------------------*/
 
-.colourSlider#blue::-webkit-slider-thumb {
+.colourSlider#bluec::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
-  background: blue;
+  background: rgb(0, 0, 255);
   cursor: pointer;
 }
 
-.colourSlider#blue::-moz-range-thumb {
+.colourSlider#bluec::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: blue;
+  background: rgb(0, 0, 255);
   cursor: pointer;
 }
 /*-------------------------------------------------------------------------0*/
