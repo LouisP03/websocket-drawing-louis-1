@@ -9,7 +9,7 @@ function setup() {
 		fill(255, 0, 100);
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		//strokeWeight(data.brushWidth);
-		line(data.x, data.y, data.px, data.py);
+		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
 	socket.on('onReset', (resetData) => {
 		background(parseInt(resetData.bgColor));
