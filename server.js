@@ -40,7 +40,7 @@ io.sockets.on('connection', (socket) => {
 	});
 
 	socket.on('onReset', (resetData) => {
-		socket.broadcast.emit(resetData);
+		socket.broadcast.emit('onReset', resetData);
 		console.log('Canvas reset by a client.')
 	});
 
