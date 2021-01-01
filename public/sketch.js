@@ -22,7 +22,7 @@ function setup() {
 }
 
 function mouseDragged() {
-	console.log("Sending: " + mouseX + ", " + mouseY);
+	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
 
 	//Creating a message to send to server
 	//name and data
