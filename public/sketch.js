@@ -10,8 +10,12 @@ function setup() {
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
-		background(51);
-		socket.emit('onReset');
+		var resetData = {
+			bgColor: '51'
+		}
+		background(resetData.bgColor);
+		alert('Reset event detected.')	
+		socket.emit('onReset', resetData);
 	})
 
 	createCanvas(800, 700);
@@ -23,8 +27,8 @@ function setup() {
 		fill(255, 0, 100);
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 	});
-	socket.on('onReset', () => {
-		background(51);
+	socket.on('onReset', (resetData) => {
+		background(resetData.bgColor);
 	});
 
 
