@@ -27,7 +27,7 @@ function mouseDragged() {
 	var data = {
 		x: mouseX,
 		y: mouseY,
-		brush-width: width;
+		brush-width: width
 	}
 
 	socket.emit('mouse', data);
