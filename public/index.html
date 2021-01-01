@@ -51,13 +51,13 @@
 
     </div>
     <script>
-      var redval = document.getElementById('redc').value;
-      var greenval = document.getElementById('greenc').value;
-      var blueval = document.getElementById('bluec').value;
 
-      console.log((redval, greenval, blueval));
 
       document.getElementById('colourBlock').addEventListener('click', () => {
+        var redval = document.getElementById('redc').value;
+        var greenval = document.getElementById('greenc').value;
+        var blueval = document.getElementById('bluec').value;
+
         document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
         console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
 
