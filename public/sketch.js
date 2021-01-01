@@ -7,9 +7,10 @@ function setup() {
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(255, 0, 100);
+		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		strokeWeight(data.brushWidth);
-		stroke(255, 0, 100)
+		stroke(255, 0, 100);
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
 	socket.on('onReset', (resetData) => {
@@ -20,6 +21,16 @@ function setup() {
 
 	document.getElementById('brush-width').addEventListener('input', () => {
 		width = document.getElementById('brush-width').value;
+
+		if (parseInt(width) > 100) {
+			width = 100;
+		} else if (parseInt(width) <= 0) {
+			width = 1;
+		};
+		if (Number.isInteger(parseInt(width)) == False) {
+			width = 36;
+			alert('Invalid entry. Using default width value of 36px.');
+		};
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
