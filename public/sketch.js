@@ -3,6 +3,16 @@ var width;
 width = document.getElementById('brush-width').value;
 
 function setup() {
+	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
+	socket.on('mouse', (data) => {
+		noStroke();
+		fill(255, 0, 100);
+		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+	});
+	socket.on('onReset', (resetData) => {
+		background(parseInt(resetData.bgColor));
+	});
+
 	width = document.getElementById('brush-width').value;
 
 	document.getElementById('brush-width').addEventListener('input', () => {
@@ -20,16 +30,6 @@ function setup() {
 
 	createCanvas(800, 700);
 	background(51);
-
-	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
-	socket.on('mouse', (data) => {
-		noStroke();
-		fill(255, 0, 100);
-		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-	});
-	socket.on('onReset', (resetData) => {
-		background(parseInt(resetData.bgColor));
-	});
 
 
 }
