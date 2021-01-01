@@ -13,7 +13,7 @@ function setup() {
 		var resetData = {
 			bgColor: '51'
 		}
-		background(resetData.bgColor);
+		background(parseInt(resetData.bgColor));
 		alert('Reset event detected.')	
 		socket.emit('onReset', resetData);
 	})
@@ -28,7 +28,7 @@ function setup() {
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 	});
 	socket.on('onReset', (resetData) => {
-		background(resetData.bgColor);
+		background(parseInt(resetData.bgColor));
 	});
 
 
