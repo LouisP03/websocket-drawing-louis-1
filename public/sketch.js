@@ -1,5 +1,5 @@
 var socket;
-var width;
+var bwidth;
 window.onload = function() {
 	bwidth = document.getElementById('brush-width').value;
 };
