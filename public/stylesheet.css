@@ -15,9 +15,9 @@
 }
 
 .slidecontainer {
-  position: fixed;
+  position: absolute;
   width: 800px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .slider {
