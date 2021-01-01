@@ -4,6 +4,7 @@ var width;
 function setup() {
 	document.getElementById('brush-width').addEventListener('input', () => {
 		width = document.getElementById('brush-width').value;
+		alert(width);
 	});
 
 	createCanvas(800, 800);
