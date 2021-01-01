@@ -1,8 +1,7 @@
 var socket;
 var bwidth;
-window.onload = function() {
-	bwidth = document.getElementById('brush-width').value;
-};
+bwidth = document.getElementById('brush-width').value;
+
 
 function setup() {
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
