@@ -7,17 +7,19 @@
     <script src="libraries/socket.io.js"></script>
 
     <style>
-      h1, h3, input {
+      h1 {
         font-family: monospace;
         color: red;
+        font-size: 20px;
       }
+
     </style>
 
   </head>
   <body>
     <h1>Interactive Drawing Application made by Louis Parkes</h1>
-    Brush width in pixels, default 36 - <input type="text" id="brush-width" value="36"></input>
-    <input type="button" value="RESET CANVAS" id="resetButton"></input>
+    <label style="font-family: monospace;" for="brush-width">Brush width in pixels, default 36  </label><input style="font-family: monospace;" type="text" id="brush-width" value="36"></input>
+    <input type="button" value="RESET CANVAS" id="resetButton" style="font-family: monospace;"></input>
   	<div id="square">
     	<script src="libraries/p5.js" type="text/javascript"></script>
     	<script src="libraries/p5.sound.js" type="text/javascript"></script>
