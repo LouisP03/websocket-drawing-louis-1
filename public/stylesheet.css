@@ -53,9 +53,3 @@
   background: hsl(350, 90%, 50%);
   cursor: pointer;
 }
-
-#containerDiv {
-  position: absolute;
-  background: blue;
-  top: 300px;
-}
