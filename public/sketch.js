@@ -8,7 +8,7 @@ function setup() {
 		noStroke();
 		fill(255, 0, 100);
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-		strokeWeight(data.brushWidth);
+		//strokeWeight(data.brushWidth);
 		line(data.x, data.y, data.px, data.py);
 	});
 	socket.on('onReset', (resetData) => {
@@ -26,7 +26,7 @@ function setup() {
 			bgColor: '51'
 		}
 		background(parseInt(resetData.bgColor));
-		alert('Reset event detected.')	
+		//alert('Reset event detected.');
 		socket.emit('onReset', resetData);
 	})
 
@@ -48,7 +48,7 @@ function mouseDragged() {
 		px: pmouseX,
 		py: pmouseY,
 		brushWidth: width
-	}
+	};
 
 	socket.emit('mouse', data);
 
