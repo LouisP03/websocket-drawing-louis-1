@@ -9,6 +9,10 @@ function setup() {
 		width = document.getElementById('brush-width').value;
 	});
 
+	document.getElementById('resetButton').addEventListener('click', () => {
+		background(51);
+	})
+
 	createCanvas(800, 700);
 	background(51);
 
