@@ -8,6 +8,8 @@ function setup() {
 		noStroke();
 		fill(255, 0, 100);
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+		strokeWeight(data.brushWidth);
+		line(data.x, data.y, data.px, data.py);
 	});
 	socket.on('onReset', (resetData) => {
 		background(parseInt(resetData.bgColor));
@@ -36,13 +38,15 @@ function setup() {
 
 function mouseDragged() {
 	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
-
+	console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
 	//Creating a message to send to server
 	//name and data
 
 	var data = {
 		x: mouseX,
 		y: mouseY,
+		px: pmouseX,
+		py: pmouseY,
 		brushWidth: width
 	}
 
