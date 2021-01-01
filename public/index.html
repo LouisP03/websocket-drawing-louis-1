@@ -42,7 +42,25 @@
       <div class="slidecontainer">
         <input type="range" min="1" max="100" value="36" class="slider" id="brush-width"></input>
       </div>
+      <div class="colourPicker">
+        <input type="range" min="0" max="255" value="255" class="colourSlider" id="red"></input>
+        <input type="range" min="0" max="255" value="255" class="colourSlider" id="green"></input>
+        <input type="range" min="0" max="255" value="255" class="colourSlider" id="blue"></input>
+      </div>
+      <div id="colourBlock">YOUR COLOUR</div>
+
     </div>
+    <script>
+      var redval = document.getElementById('red').value;
+      var greenval = document.getElementById('green').value;
+      var blueval = document.getElementById('blue').value;
+
+      var finalColour = (redval, greenval, blueval);
+
+
+
+
+    </script>
 <!--
     <script>
       var slider = document.getElementById('brush-width');
