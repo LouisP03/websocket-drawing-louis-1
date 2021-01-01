@@ -8,7 +8,8 @@ function setup() {
 		noStroke();
 		fill(255, 0, 100);
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-		//strokeWeight(data.brushWidth);
+		strokeWeight(data.brushWidth);
+		stroke(255, 0, 100)
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
 	socket.on('onReset', (resetData) => {
@@ -56,6 +57,9 @@ function mouseDragged() {
 	noStroke();
 	fill(255);
 	ellipse(mouseX, mouseY, width, width);
+	strokeWeight(data.brushWidth);
+	stroke(255, 0, 100)
+	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 }
 
 function draw() {
