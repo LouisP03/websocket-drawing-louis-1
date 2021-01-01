@@ -1,5 +1,6 @@
 var socket;
 var width;
+width = document.getElementById('brush-width').value;
 
 function setup() {
 	document.getElementById('brush-width').addEventListener('input', () => {
