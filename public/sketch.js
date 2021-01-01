@@ -1,7 +1,7 @@
 var socket;
 var width;
 window.onload = () => {
-	width = document.getElementById('brush-width').value;
+	bwidth = document.getElementById('brush-width').value;
 }
 
 function setup() {
@@ -19,18 +19,16 @@ function setup() {
 		background(parseInt(resetData.bgColor));
 	});
 
-	width = document.getElementById('brush-width').value;
-
 	document.getElementById('brush-width').addEventListener('input', () => {
-		width = document.getElementById('brush-width').value;
+		bwidth = document.getElementById('brush-width').value;
 
-		if (parseInt(width) > 100) {
-			width = 100;
-		} else if (parseInt(width) <= 0) {
-			width = 1;
+		if (parseInt(bwidth) > 100) {
+			bwidth = 100;
+		} else if (parseInt(bwidth) <= 0) {
+			bwidth = 1;
 		};
-		if (Number.isInteger(parseInt(width)) == False) {
-			width = 36;
+		if (Number.isInteger(parseInt(bwidth)) == False) {
+			bwidth = 36;
 			alert('Invalid entry. Using default width value of 36px.');
 		};
 	});
@@ -61,7 +59,7 @@ function mouseDragged() {
 		y: mouseY,
 		px: pmouseX,
 		py: pmouseY,
-		brushWidth: width
+		brushWidth: bwidth
 	};
 
 	socket.emit('mouse', data);
