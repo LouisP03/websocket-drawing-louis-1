@@ -13,7 +13,7 @@ function setup() {
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(255, 0, 100);
-		ellipse(data.x, data.y, data.brush-width, data.brush-width);
+		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 	});
 
 }
@@ -27,7 +27,7 @@ function mouseDragged() {
 	var data = {
 		x: mouseX,
 		y: mouseY,
-		brush-width: width
+		brushWidth: width
 	}
 
 	socket.emit('mouse', data);
