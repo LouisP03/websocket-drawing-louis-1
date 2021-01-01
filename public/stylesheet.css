@@ -16,8 +16,9 @@
 }
 
 .slidecontainer {
-  position: absolute;
-  width: 800px;
+  position: relative;
+  width: 1000px;
+  height: auto;
   margin: auto;
 }
 
@@ -53,7 +54,7 @@
   cursor: pointer;
 }
 
-.containerDiv {
+#containerDiv {
   position: absolute;
   background: blue;
   top: 300px;
