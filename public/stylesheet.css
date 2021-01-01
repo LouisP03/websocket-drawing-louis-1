@@ -121,9 +121,11 @@
   cursor: pointer;
 }
 /*-------------------------------------------------------------------------0*/
-#colourPicker {
+#colourBlock {
+  position: relative;
   width: 1000px;
   height: 25px;
+  margin: auto;
   background: red;
   text-align: center;
   font-family: "Poppins", sans-serif;
