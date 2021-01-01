@@ -1,8 +1,8 @@
 var socket;
 var width;
-window.onload = () => {
+window.onload = function() {
 	bwidth = document.getElementById('brush-width').value;
-}
+};
 
 function setup() {
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
@@ -45,7 +45,8 @@ function setup() {
 		socket.emit('onReset', resetData);
 	})
 
-	createCanvas(800, 700);
+	var canvas = createCanvas(800, 700);
+	canvas.parent('subContainer');
 	background(51);
 
 
