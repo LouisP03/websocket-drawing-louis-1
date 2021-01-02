@@ -2,8 +2,26 @@ var socket;
 var bwidth;
 bwidth = document.getElementById('brush-width').value;
 
-
 function setup() {
+	const elements = document.querySelectorAll(".colourSlider");
+	elements.forEach(element => {
+	  element.addEventListener('input', (e) => {
+		var redval = document.getElementById('redc').value;
+		var greenval = document.getElementById('greenc').value;
+		var blueval = document.getElementById('bluec').value;
+
+		document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+		//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
+	   
+		var chosenColour = {
+		  R: redval,
+		  G: greenval,
+		  B: blueval
+		}
+
+	  });
+	});
+	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	socket.on('mouse', (data) => {
 		noStroke();
