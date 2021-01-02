@@ -8,6 +8,7 @@
     <title>Sockets</title>
 
     <script src="libraries/socket.io.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
       h1, h2 {
@@ -52,17 +53,16 @@
     </div>
     <script>
 
+      $(document).ready(function(){
+        $("#colourSlider").click(function(){
+          var redval = document.getElementById('redc').value;
+          var greenval = document.getElementById('greenc').value;
+          var blueval = document.getElementById('bluec').value;
 
-      document.getElementsByClassName('colourSlider').addEventListener('click', () => {
-        var redval = document.getElementById('redc').value;
-        var greenval = document.getElementById('greenc').value;
-        var blueval = document.getElementById('bluec').value;
-
-        document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
-        console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
-
+          document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+          console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
+        })
       });
-
 
 
     </script>
