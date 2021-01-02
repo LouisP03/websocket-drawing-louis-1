@@ -25,11 +25,11 @@ function setup() {
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	socket.on('mouse', (data) => {
 		noStroke();
-		fill(255, 0, 100);
+		fill(data.redvalue, data.greenvalue, data.bluevalue);
 		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		strokeWeight(data.brushWidth);
-		stroke(255, 0, 100);
+		stroke(data.redvalue, data.greenvalue, data.bluevalue);
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
 	socket.on('onReset', (resetData) => {
@@ -80,16 +80,19 @@ function mouseDragged() {
 		y: mouseY,
 		px: pmouseX,
 		py: pmouseY,
-		brushWidth: bwidth
+		brushWidth: bwidth,
+		redvalue: chosenColour.R,
+		greenvalue: chosenColour.G,
+		bluevalue: chosenColour.B
 	};
 
 	socket.emit('mouse', data);
 
 	noStroke();
-	fill(255);
+	fill(data.redvalue, data.greenvalue, data.bluevalue);
 	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
 	strokeWeight(data.brushWidth);
-	stroke(255);
+	Stroke(data.redvalue, data.greenvalue, data.bluevalue);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 }
 
