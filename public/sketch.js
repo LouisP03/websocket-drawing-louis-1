@@ -1,6 +1,8 @@
 var socket;
 var bwidth;
 bwidth = document.getElementById('brush-width').value;
+var chosenColour;
+
 
 function setup() {
 	const elements = document.querySelectorAll(".colourSlider");
