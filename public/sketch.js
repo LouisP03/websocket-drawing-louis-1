@@ -26,7 +26,7 @@ function setup() {
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	socket.on('mouse', (data) => {
-		noStroke();
+		//noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
