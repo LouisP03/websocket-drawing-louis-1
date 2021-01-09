@@ -94,7 +94,8 @@ function mouseDragged() {
 	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
 	strokeWeight(data.brushWidth);
-	Stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	//Stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	Stroke(100, 100, 100);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 }
 
