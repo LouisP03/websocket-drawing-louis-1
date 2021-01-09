@@ -2,6 +2,23 @@ var socket;
 var bwidth;
 bwidth = document.getElementById('brush-width').value;
 
+document.getElementById('brush-width').addEventListener('input', () => {
+	bwidth = document.getElementById('brush-width').value;
+
+	if (parseInt(bwidth) > 100) {
+		bwidth = 100;
+		document.getElementById('brush-width').value = 100;
+	} else if (parseInt(bwidth) <= 0) {
+		bwidth = 1;
+		document.getElementById('brush-width').value = 1;
+	};
+	if (Number.isInteger(parseInt(bwidth)) == false) {
+		bwidth = 36;
+		document.getElementById('brush-width').value = 36;
+		alert('Invalid entry. Using default width value of 36px.');
+	};
+});
+
 
 
 function setup() {
@@ -36,23 +53,6 @@ function setup() {
 	});
 	socket.on('onReset', (resetData) => {
 		background(parseInt(resetData.bgColor));
-	});
-
-	document.getElementById('brush-width').addEventListener('input', () => {
-		bwidth = document.getElementById('brush-width').value;
-
-		if (parseInt(bwidth) > 100) {
-			bwidth = 100;
-			document.getElementById('brush-width').value = 100;
-		} else if (parseInt(bwidth) <= 0) {
-			bwidth = 1;
-			document.getElementById('brush-width').value = 1;
-		};
-		if (Number.isInteger(parseInt(bwidth)) == false) {
-			bwidth = 36;
-			document.getElementById('brush-width').value = 36;
-			alert('Invalid entry. Using default width value of 36px.');
-		};
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
