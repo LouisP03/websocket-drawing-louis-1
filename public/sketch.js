@@ -1,7 +1,7 @@
 var socket;
 var bwidth;
 bwidth = document.getElementById('brush-width').value;
-var chosenColour;
+
 
 
 function setup() {
@@ -15,7 +15,7 @@ function setup() {
 		document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
 		//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
 	   
-		var chosenColour = {
+		chosenColour = {
 		  R: redval,
 		  G: greenval,
 		  B: blueval
@@ -27,11 +27,11 @@ function setup() {
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	socket.on('mouse', (data) => {
 		noStroke();
-		fill(data.redvalue, data.greenvalue, data.bluevalue);
+		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		strokeWeight(data.brushWidth);
-		stroke(data.redvalue, data.greenvalue, data.bluevalue);
+		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
 	socket.on('onReset', (resetData) => {
