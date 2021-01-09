@@ -6,7 +6,7 @@ var chosenColour;
 
 function setup() {
 	const elements = document.querySelectorAll(".colourSlider");
-	elements.forEach(element, () => {
+	elements.forEach(elements, () => {
 	  element.addEventListener('input', (e) => {
 		var redval = document.getElementById('redc').value;
 		var greenval = document.getElementById('greenc').value;
