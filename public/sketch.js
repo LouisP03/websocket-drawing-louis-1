@@ -30,7 +30,7 @@ function setup() {
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-		strokeWeight(data.brushWidth);
+		strokeWeight(parseInt(data.brushWidth));
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 	});
@@ -93,7 +93,7 @@ function mouseDragged() {
 	//noStroke();
 	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
-	strokeWeight(data.brushWidth);
+	strokeWeight(parseInt(data.brushWidth));
 	stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 	//stroke(100, 100, 100);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
