@@ -91,10 +91,14 @@ function mouseDragged() {
 	socket.emit('mouse', data);
 
 	//noStroke();
-	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	fill(parseInt(chosenColour.R), parseInt(chosenColour.G), parseInt(chosenColour.B));
+
 	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
 	strokeWeight(parseInt(data.brushWidth));
-	stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	//stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	stroke(parseInt(chosenColour.R), parseInt(chosenColour.G), parseInt(chosenColour.B));
+
 	//stroke(100, 100, 100);
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 }
