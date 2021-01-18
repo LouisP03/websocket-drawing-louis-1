@@ -23,8 +23,8 @@ function setup() {
 		var blueval = document.getElementById('bluec').value;
 
 		document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
-		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ');';
-		document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ');';
+		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
 
 		//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
 	   
