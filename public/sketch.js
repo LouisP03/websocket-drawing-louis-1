@@ -23,8 +23,8 @@ function setup() {
 		var blueval = document.getElementById('bluec').value;
 
 		document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
-		document.getElementById('subContainer').style['border-left'] = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
-		document.getElementById('subContainer').style['border-right'] = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ');';
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ');';
 
 		//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
 	   
@@ -40,27 +40,27 @@ function setup() {
 
 	document.getElementById('brush-width').addEventListener('input', () => {
 		bwidth = document.getElementById('brush-width').value;
-		document.getElementById('subContainer').style['border-left'] = String(bwidth) + "px solid black";
-		document.getElementById('subContainer').style['border-right'] = String(bwidth) + "px solid black";
+		document.getElementById('subContainer').style['border-left'] = String(bwidth) + "px solid black;";
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + "px solid black;";
 
 
 		if (parseInt(bwidth) > 100) {
 			bwidth = 100;
 			document.getElementById('brush-width').value = 100;
-			document.getElementById('subContainer').style['border-left'] = "100px solid black";
-			document.getElementById('subContainer').style['border-right'] = "100px solid black";
+			document.getElementById('subContainer').style['border-left'] = "100px solid black;";
+			document.getElementById('subContainer').style['border-right'] = "100px solid black;";
 		} else if (parseInt(bwidth) <= 0) {
 			bwidth = 1;
 			document.getElementById('brush-width').value = 1;
-			document.getElementById('subContainer').style['border-left'] = "1px solid black";
-			document.getElementById('subContainer').style['border-right'] = "1px solid black";
+			document.getElementById('subContainer').style['border-left'] = "1px solid black;";
+			document.getElementById('subContainer').style['border-right'] = "1px solid black;";
 
 		};
 		if (Number.isInteger(parseInt(bwidth)) == false) {
 			bwidth = 36;
 			document.getElementById('brush-width').value = 36;
-			document.getElementById('subContainer').style['border-left'] = "36px solid black";
-			document.getElementById('subContainer').style['border-right'] = "36px solid black";
+			document.getElementById('subContainer').style['border-left'] = "36px solid black;";
+			document.getElementById('subContainer').style['border-right'] = "36px solid black;";
 			alert('Invalid entry. Using default width value of 36px.');
 		};
 	});
