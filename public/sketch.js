@@ -170,6 +170,10 @@ function mousePressed() {
 			B: String(dropperColour[2])
 		  }
 
+		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
+  
+
 	} else {
 		noStroke();
 		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
