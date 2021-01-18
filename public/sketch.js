@@ -38,6 +38,8 @@ function setup() {
 	document.getElementById('brush-width').addEventListener('input', () => {
 		bwidth = document.getElementById('brush-width').value;
 		document.getElementById('subContainer').style['border-left'] = String(bwidth) + "px solid black";
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + "px solid black";
+
 
 		if (parseInt(bwidth) > 100) {
 			bwidth = 100;
