@@ -109,7 +109,7 @@ function setup() {
 		socket.emit('onReset', resetData);
 	})
 
-	var canvas = createCanvas(800, 700);
+	var canvas = createCanvas(1000, 700);
 	canvas.parent('containerDiv');
 	background(51);
 }
