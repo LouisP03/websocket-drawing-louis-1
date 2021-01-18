@@ -1,0 +1,10 @@
+Create array and functionality involving canvasData containing data for canvas.
+Send this data to each new connection, perhaps on connection or on request (button click).
+Establish procedure for drawing contents of canvasData to screen.
+
+This could all be done server-side on server.js (?):
+     - when server.js running, push all data that is transmitted through the server to canvasData as an individual array
+     - socket.emit('requestCanvasData') after socket = io.connect()
+     - server.js detects this event, sends across canvasData
+     - when sketch.js receives this data, goes through canvasData and draws to screen using same logic (?) to draw everything else
+     - next thing to do: work on code below line 56 on sketch.js
