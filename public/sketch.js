@@ -154,11 +154,19 @@ function mousePressed() {
 		bluevalue: chosenColour.B
 	};
 
-	noStroke();
-	fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
-	ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
+	var c = document.getElementById('dropperStatus');
+	if (c.checked) {
+		var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
 
+		document.getElementById('redc').value = dropperColour[0];
+		document.getElementById('greenc').value = dropperColour[1];
+		document.getElementById('bluec').value = dropperColour[2];
 
+	} else {
+		noStroke();
+		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
+		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
+		socket.emit('click', clickData);
+	}
 
-	socket.emit('click', clickData);
 }
