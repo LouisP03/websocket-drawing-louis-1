@@ -7,7 +7,11 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
-
+chosenColour = {
+	R: redval;
+	G: greenval;
+	B: blueval;
+}
 
 function setup() {
 
