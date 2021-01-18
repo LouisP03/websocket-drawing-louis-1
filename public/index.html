@@ -35,13 +35,16 @@
         
         </div>
         <!--<label style="font-family: monospace;" for="brush-width">Brush width in pixels, default 36  </label><input style="font-family: monospace;" type="text" id="brush-width" value="36"></input>-->
-        <div id="divButton" class="InsideContent">
-          <input type="button" value="RESET CANVAS" id="resetButton" style="font-family: monospace"></input>
-        </div>
-
       </div>
       <div class="slidecontainer">
         <input type="range" min="1" max="100" value="36" class="slider" id="brush-width"></input>
+      </div>
+      <div id="divButton" class="InsideContent">
+        <input type="button" value="RESET CANVAS" id="resetButton" style="font-family: monospace"></input>
+      </div>
+      <div id="divCheckbox" class="InsideContent">
+        <input type="checkbox" id="dropperStatus" name="status" value="dropperStatus"></input>
+        <label for="dropperStatus">Colour Dropper</label>
       </div>
       <div class="colourPicker">
         <input type="range" min="0" max="255" value="100" class="colourSlider" id="redc"></input>
@@ -49,10 +52,6 @@
         <input type="range" min="0" max="255" value="100" class="colourSlider" id="bluec"></input>
       </div>
       <div id="colourBlock">YOUR COLOUR</div>
-      <div id="divRadio" class="InsideContent">
-        <input type="radio" id="dropperStatus" name="status" value="dropperStatus"></input>
-        <label for="dropperStatus">Colour Dropper</label>
-      </div>
     </div>
     <script>
 
