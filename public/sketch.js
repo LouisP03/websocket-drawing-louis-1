@@ -14,7 +14,7 @@ chosenColour = {
 };
 
 function setup() {
-
+	frameRate(60);
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
@@ -140,4 +140,25 @@ function mouseDragged() {
 
 
 	socket.emit('mouse', data);
+}
+
+function mousePressed() {
+	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
+
+	var clickData = {
+		x = mouseX,
+		y = mouseY,
+		brushWidth: bwidth,
+		redvalue: chosenColour.R,
+		greenvalue: chosenColour.G,
+		bluevalue: chosenColour.B
+	};
+
+	noStroke();
+	fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
+	ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
+
+
+
+	socket.emit('click', clickData);
 }
