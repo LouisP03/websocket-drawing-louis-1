@@ -139,6 +139,8 @@
 }
 #divButton {
   font-family: monospace;
+  position: relative;
+  margin: 0 auto;
 }
 
 #settings {
