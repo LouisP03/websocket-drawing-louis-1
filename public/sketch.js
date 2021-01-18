@@ -51,7 +51,7 @@ function setup() {
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	//socket = io.connect('127.0.0.1:3000')
-	socket.emit('requestCanvasData');
+	//socket.emit('requestCanvasData');
 /*
 	socket.on('requestCanvasData', (canvasData) => {
 		noStroke();
@@ -63,11 +63,11 @@ function setup() {
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 
 	});*/
-	
+/*	
 	socket.on('requestCanvasData', (canvasData) => {
 		console.log(canvasData);
 	});
-
+*/
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
