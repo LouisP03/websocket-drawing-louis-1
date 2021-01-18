@@ -29,9 +29,9 @@ function setup() {
 		//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
 	   
 		chosenColour = {
-		  R: redval,
-		  G: greenval,
-		  B: blueval
+		  R: String(redval),
+		  G: String(greenval),
+		  B: String(blueval)
 		}
 
 	  });
@@ -40,27 +40,27 @@ function setup() {
 
 	document.getElementById('brush-width').addEventListener('input', () => {
 		bwidth = document.getElementById('brush-width').value;
-		document.getElementById('subContainer').style['border-left'] = String(bwidth) + "px solid black";
-		document.getElementById('subContainer').style['border-right'] = String(bwidth) + "px solid black";
+		document.getElementById('subContainer').style['border-left'] = String(bwidth) + "px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
+		document.getElementById('subContainer').style['border-right'] = String(bwidth) + "px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
 
 
 		if (parseInt(bwidth) > 100) {
 			bwidth = 100;
 			document.getElementById('brush-width').value = 100;
-			document.getElementById('subContainer').style['border-left'] = "100px solid black";
-			document.getElementById('subContainer').style['border-right'] = "100px solid black";
+			document.getElementById('subContainer').style['border-left'] = "100px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
+			document.getElementById('subContainer').style['border-right'] = "100px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
 		} else if (parseInt(bwidth) <= 0) {
 			bwidth = 1;
 			document.getElementById('brush-width').value = 1;
-			document.getElementById('subContainer').style['border-left'] = "1px solid black";
-			document.getElementById('subContainer').style['border-right'] = "1px solid black";
+			document.getElementById('subContainer').style['border-left'] = "1px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
+			document.getElementById('subContainer').style['border-right'] = "1px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
 
 		};
 		if (Number.isInteger(parseInt(bwidth)) == false) {
 			bwidth = 36;
 			document.getElementById('brush-width').value = 36;
-			document.getElementById('subContainer').style['border-left'] = "36px solid black";
-			document.getElementById('subContainer').style['border-right'] = "36px solid black";
+			document.getElementById('subContainer').style['border-left'] = "36px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
+			document.getElementById('subContainer').style['border-right'] = "36px solid " + "rgb(" + chosenColour.R + "," + chosenColour.G + "," + chosenColour.B + ")";
 			alert('Invalid entry. Using default width value of 36px.');
 		};
 	});
