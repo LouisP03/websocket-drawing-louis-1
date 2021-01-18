@@ -13,8 +13,9 @@
   background: #ee959e;
   text-align: center;
   margin: 0 auto;
-  border-left: 36px solid black;
-  border-right: 36px solid black;
+  /*the following properties are changed through JS*/
+  border-left: 36px solid rgb(200, 200, 200);
+  border-right: 36px solid rgb(200, 200, 200);
 }
 
 .slidecontainer,
