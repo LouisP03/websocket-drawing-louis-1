@@ -2,26 +2,14 @@ var socket;
 var bwidth;
 bwidth = document.getElementById('brush-width').value;
 
-document.getElementById('brush-width').addEventListener('input', () => {
-	bwidth = document.getElementById('brush-width').value;
-
-	if (parseInt(bwidth) > 100) {
-		bwidth = 100;
-		document.getElementById('brush-width').value = 100;
-	} else if (parseInt(bwidth) <= 0) {
-		bwidth = 1;
-		document.getElementById('brush-width').value = 1;
-	};
-	if (Number.isInteger(parseInt(bwidth)) == false) {
-		bwidth = 36;
-		document.getElementById('brush-width').value = 36;
-		alert('Invalid entry. Using default width value of 36px.');
-	};
-});
+var redval = document.getElementById('redc').value;
+var greenval = document.getElementById('greenc').value;
+var blueval = document.getElementById('bluec').value;
 
 
 
 function setup() {
+
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
@@ -40,10 +28,30 @@ function setup() {
 
 	  });
 	});
+
+
+	document.getElementById('brush-width').addEventListener('input', () => {
+		bwidth = document.getElementById('brush-width').value;
+
+		if (parseInt(bwidth) > 100) {
+			bwidth = 100;
+			document.getElementById('brush-width').value = 100;
+		} else if (parseInt(bwidth) <= 0) {
+			bwidth = 1;
+			document.getElementById('brush-width').value = 1;
+		};
+		if (Number.isInteger(parseInt(bwidth)) == false) {
+			bwidth = 36;
+			document.getElementById('brush-width').value = 36;
+			alert('Invalid entry. Using default width value of 36px.');
+		};
+	});
+
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
+	//socket = io.connect('127.0.0.1:3000')
 	socket.on('mouse', (data) => {
-		//noStroke();
+		noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
@@ -67,8 +75,6 @@ function setup() {
 	var canvas = createCanvas(800, 700);
 	canvas.parent('containerDiv');
 	background(51);
-
-
 }
 
 function mouseDragged() {
@@ -88,21 +94,14 @@ function mouseDragged() {
 		bluevalue: chosenColour.B
 	};
 
-	socket.emit('mouse', data);
-
-	//noStroke();
-	//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-	fill(parseInt(chosenColour.R), parseInt(chosenColour.G), parseInt(chosenColour.B));
-
-	ellipse(mouseX, mouseY, data.brushWidth, data.brushWidth);
+	noStroke();
+	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 	strokeWeight(parseInt(data.brushWidth));
-	//stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-	stroke(parseInt(chosenColour.R), parseInt(chosenColour.G), parseInt(chosenColour.B));
-
-	//stroke(100, 100, 100);
+	stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
-}
 
-function draw() {
+
+	socket.emit('mouse', data);
 
 }
