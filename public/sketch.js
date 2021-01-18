@@ -64,6 +64,10 @@ function setup() {
 
 	});*/
 	
+	socket.on('requestCanvasData', (canvasData) => {
+		console.log(canvasData);
+	});
+
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
