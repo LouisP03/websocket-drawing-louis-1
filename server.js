@@ -23,6 +23,8 @@ var io = socket(server);
 
 var connections = new Set();
 
+var canvasData;
+
 io.sockets.on('connection', (socket) => {
 	var id = socket.id;
 	console.log('New client connection: ' + id);
@@ -37,11 +39,18 @@ io.sockets.on('connection', (socket) => {
 		socket.broadcast.emit('mouse', data);
 		// io.sockets.emit('mouse', data);
 		console.log(data);
+
+		canvasData.push(data);
 	});
 
 	socket.on('onReset', (resetData) => {
 		socket.broadcast.emit('onReset', resetData);
 		console.log('Canvas reset by a client.')
+	});
+
+	socket.on('requestCanvasData', () => {
+		socket.emit('requestCanvasData', canvasData);
+		console.log(canvasData);
 	});
 
 });

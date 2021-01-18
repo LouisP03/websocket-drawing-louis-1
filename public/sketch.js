@@ -1,5 +1,6 @@
 var socket;
 var bwidth;
+
 bwidth = document.getElementById('brush-width').value;
 
 var redval = document.getElementById('redc').value;
@@ -50,6 +51,19 @@ function setup() {
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	//socket = io.connect('127.0.0.1:3000')
+	socket.emit('requestCanvasData');
+/*
+	socket.on('requestCanvasData', (canvasData) => {
+		noStroke();
+		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+		
+		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+		strokeWeight(parseInt(data.brushWidth));
+		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+
+	});*/
+	
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
@@ -58,7 +72,9 @@ function setup() {
 		strokeWeight(parseInt(data.brushWidth));
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+
 	});
+
 	socket.on('onReset', (resetData) => {
 		background(parseInt(resetData.bgColor));
 	});
@@ -103,5 +119,4 @@ function mouseDragged() {
 
 
 	socket.emit('mouse', data);
-
 }
