@@ -14,8 +14,8 @@
   text-align: center;
   margin: 0 auto;
   /*the following properties are changed through JS*/
-  border-left: 36px solid rgb(200, 200, 200);
-  border-right: 36px solid rgb(200, 200, 200);
+  border-left: 36px solid rgb(100, 100, 100);
+  border-right: 36px solid rgb(100, 100, 100);
 }
 
 .slidecontainer,
