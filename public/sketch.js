@@ -146,8 +146,8 @@ function mousePressed() {
 	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
 
 	var clickData = {
-		x = mouseX,
-		y = mouseY,
+		x: mouseX,
+		y: mouseY,
 		brushWidth: bwidth,
 		redvalue: chosenColour.R,
 		greenvalue: chosenColour.G,
