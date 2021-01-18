@@ -13,6 +13,8 @@
   background: #ee959e;
   text-align: center;
   margin: 0 auto;
+  border-left: 36px solid black;
+  border-right: 36px solid black;
 }
 
 .slidecontainer,
@@ -130,4 +132,8 @@
   text-align: center;
   font-family: "Poppins", sans-serif;
   border: 1px solid #000000;
+}
+
+#bwIndicator {
+  position: ;
 }
