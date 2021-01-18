@@ -162,6 +162,12 @@ function mousePressed() {
 		document.getElementById('greenc').value = dropperColour[1];
 		document.getElementById('bluec').value = dropperColour[2];
 
+		chosenColour = {
+			R: String(dropperColour[0]),
+			G: String(dropperColour[1]),
+			B: String(dropperColour[2])
+		  }
+
 	} else {
 		noStroke();
 		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
