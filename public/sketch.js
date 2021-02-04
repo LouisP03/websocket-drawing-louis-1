@@ -191,6 +191,9 @@ function saveToFile() {
 	var cHour = currentDate.getHours();
 	var cMinute = currentDate.getMinutes();
 	var cSecond = currentDate.getSeconds();
+	console.log(cYear);
+	console.log(cMonth);
+	console.log(cDay);
 	var filename = `LVP_${cYear}${cMonth}${cDay}_${cHour}_${cMinute}_${cSecond}_canvas`;
 	saveCanvas(filename, 'png');
 
