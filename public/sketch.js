@@ -182,3 +182,16 @@ function mousePressed() {
 	}
 
 }
+
+function saveToFile() {
+	var currentDate = new Date();
+	var cDay = currentDate.getDay();
+	var cMonth = currentDate.getMonth();
+	var cYear = currentDate.getFullYear();
+	var cHour = currentDate.getHours();
+	var cMinute = currentDate.getMinutes();
+	var cSecond = currentDate.getSeconds();
+	var filename = `LVP_${cYear}${cMonth}${cDay}_${cHour}_${cMinute}_${cSecond}_canvas`;
+	saveCanvas(filename, 'png');
+
+}
