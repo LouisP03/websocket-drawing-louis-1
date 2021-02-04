@@ -186,7 +186,7 @@ function mousePressed() {
 function saveToFile() {
 	var currentDate = new Date();
 	var cDay = currentDate.getDay();
-	var cMonth = currentDate.getMonth();
+	var cMonth = currentDate.getMonth() + 1;
 	var cYear = currentDate.getFullYear();
 	var cHour = currentDate.getHours();
 	var cMinute = currentDate.getMinutes();
@@ -194,7 +194,7 @@ function saveToFile() {
 	console.log(cYear);
 	console.log(cMonth);
 	console.log(cDay);
-	var filename = `LVP_${cYear}${cMonth}${cDay}_${cHour}_${cMinute}_${cSecond}_canvas`;
+	var filename = `LVP_${cYear}-${cMonth}-${cDay}-${cHour}_${cMinute}_${cSecond}_canvas`;
 	saveCanvas(filename, 'png');
 
 }
