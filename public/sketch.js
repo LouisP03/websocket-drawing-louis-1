@@ -132,6 +132,7 @@ function mouseDragged() {
 	};
 
 	noStroke();
+	smooth();
 	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 	ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 	strokeWeight(parseInt(data.brushWidth));
@@ -176,6 +177,7 @@ function mousePressed() {
 
 	} else {
 		noStroke();
+		smooth();
 		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
 		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 		socket.emit('click', clickData);
