@@ -101,18 +101,6 @@ function setup() {
 		background(parseInt(resetData.bgColor));
 	});
 
-	socket.on('onSave', (pixelArrayData) => {
-		console.log(pixelArrayData.canvas_state);
-		loadPixels();
-		for (i = 0; i <= arrayToDraw.length-1; i++) {
-			pixels[i] = arrayToDraw[i];
-		}
-		for (x = 3; x <= arrayToDraw.length-1; x += 4) {
-			pixels[x] == 100;
-		}
-		updatePixels();
-	});
-
 	document.getElementById('resetButton').addEventListener('click', () => {
 		var resetData = {
 			bgColor: '51'
@@ -134,10 +122,26 @@ function setup() {
 		socket.emit('onSave', pixelArrayData);
 	});
 
+	socket.on('onSave', (pixelArrayData) => {
+		console.log(pixelArrayData.canvas_state);
+		loadPixels();
+		for (i = 0; i <= arrayToDraw.length-1; i++) {
+			pixels[i] = arrayToDraw[i];
+		}
+		for (x = 3; x <= arrayToDraw.length-1; x += 4) {
+			pixels[x] == 100;
+		}
+		updatePixels();
+	});
+
+
 	var canvas = createCanvas(1000, 700);
 	canvas.parent('containerDiv');
 	background(51);
+
 }
+
+
 
 function mouseDragged() {
 	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
