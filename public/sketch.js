@@ -130,6 +130,7 @@ function setup() {
 		};
 		updatePixels();
 
+		console.log(pixelArrayData.canvas_state)
 		socket.emit('onSave', pixelArrayData);
 	})
 
