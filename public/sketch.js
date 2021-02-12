@@ -185,6 +185,10 @@ function mousePressed() {
 
 }
 
+function mouseWheel(event) {
+	bwidth = document.getElementById('brush-width').value += event.delta;
+}
+
 function saveToFile() {
 	var currentDate = new Date();
 	var cDay = currentDate.getDay();
