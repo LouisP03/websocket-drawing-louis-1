@@ -199,15 +199,7 @@ function mousePressed() {
 		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 		socket.emit('click', clickData);
 
-		loadPixels();
-		arrayToDraw = pixels;
 
-		myObj = {
-			array: pixels
-		};
-		myJSON = JSON.stringify(myObj);
-		localStorage.setItem("canvas_states", myJSON);
-		updatePixels();
 	}
 
 }
