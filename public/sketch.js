@@ -141,6 +141,9 @@ function mouseDragged() {
 
 
 	socket.emit('mouse', data);
+
+	loadPixels();
+	console.log(pixels);
 }
 
 function mousePressed() {
