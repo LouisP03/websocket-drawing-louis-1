@@ -96,6 +96,10 @@ function setup() {
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 
+		loadPixels();
+		arrayToDraw = pixels;
+		updatePixels();
+
 	});
 
 	socket.on('onReset', (resetData) => {
@@ -109,6 +113,11 @@ function setup() {
 		background(parseInt(resetData.bgColor));
 		//alert('Reset event detected.');
 		socket.emit('onReset', resetData);
+
+		loadPixels();
+		arrayToDraw = pixels;
+		updatePixels();
+
 	})
 
 	var canvas = createCanvas(1000, 700);
