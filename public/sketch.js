@@ -103,14 +103,14 @@ function setup() {
 
 	socket.on('onSave', (pixelArrayData) => {
 		console.log(pixelArrayData.canvas_state);
-		//loadPixels();
-		//for (i = 0; i <= arrayToDraw.length-1; i++) {
-		//	pixels[i] = arrayToDraw[i];
-		//}
-		//for (x = 3; x <= arrayToDraw.length-1; x += 4) {
-		//	pixels[x] == 100;
-		//}
-		//updatePixels();
+		loadPixels();
+		for (i = 0; i <= arrayToDraw.length-1; i++) {
+			pixels[i] = arrayToDraw[i];
+		}
+		for (x = 3; x <= arrayToDraw.length-1; x += 4) {
+			pixels[x] == 100;
+		}
+		updatePixels();
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
@@ -121,7 +121,7 @@ function setup() {
 		//alert('Reset event detected.');
 		socket.emit('onReset', resetData);
 
-	})
+	});
 
 	document.getElementById('saveButton').addEventListener('click', () => {
 		loadPixels();
@@ -130,9 +130,9 @@ function setup() {
 		};
 		updatePixels();
 
-		console.log(pixelArrayData.canvas_state)
+		//console.log(pixelArrayData.canvas_state);
 		socket.emit('onSave', pixelArrayData);
-	})
+	});
 
 	var canvas = createCanvas(1000, 700);
 	canvas.parent('containerDiv');
