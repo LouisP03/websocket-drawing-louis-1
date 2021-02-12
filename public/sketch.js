@@ -144,6 +144,8 @@ function mouseDragged() {
 
 	loadPixels();
 	console.log(pixels);
+	console.log(pixels.length);
+	updatePixels();
 }
 
 function mousePressed() {
@@ -184,6 +186,11 @@ function mousePressed() {
 		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
 		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 		socket.emit('click', clickData);
+
+		loadPixels();
+		console.log(pixels);
+		console.log(pixels.length);
+		updatePixels();
 	}
 
 }
