@@ -7,7 +7,6 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
-arrayToDraw = []
 
 chosenColour = {
 	R: redval,
@@ -96,14 +95,14 @@ function setup() {
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 
-		loadPixels();
-		arrayToDraw = pixels;
-		updatePixels();
-
 	});
 
 	socket.on('onReset', (resetData) => {
 		background(parseInt(resetData.bgColor));
+	});
+
+	socket.on('onSave', (pixelArrayData) => {
+		drawFromPixelArray(pixelArrayData);
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
@@ -114,16 +113,16 @@ function setup() {
 		//alert('Reset event detected.');
 		socket.emit('onReset', resetData);
 
-		loadPixels();
-		arrayToDraw = pixels;
+	})
 
-		myObj = {
-			array: pixels
-		};
-		myJSON = JSON.stringify(myObj);
-		localStorage.setItem("canvas_states", myJSON);
+	document.getElementById('saveButton').addEventListener('click', () => {
+		loadPixels();
+		pixelArrayData = {
+			canvas_state: pixels
+		}
 		updatePixels();
 
+		socket.emit('onSave', pixelArrayData);
 	})
 
 	var canvas = createCanvas(1000, 700);
@@ -159,15 +158,6 @@ function mouseDragged() {
 
 	socket.emit('mouse', data);
 
-	loadPixels();
-	arrayToDraw = pixels;
-
-	myObj = {
-		array: pixels
-	};
-	myJSON = JSON.stringify(myObj);
-	localStorage.setItem("canvas_states", myJSON);
-	updatePixels();
 }
 
 function mousePressed() {
@@ -239,14 +229,11 @@ function saveToFile() {
 
 }
 
-function drawFromPixelArray() {
+function drawFromPixelArray(pixelArrayData) {
+	arrayToDraw = pixelArrayData.canvas_state;
 	loadPixels();
 	for (i = 0; i <= arrayToDraw.length-1; i++) {
-		if ((i+1) % 4 == 0) {
-			pixels[i] = arrayToDraw[i];
-		} else {
-			pixels[i] = 255-arrayToDraw[i];
-		}
+		pixels[i] = arrayToDraw[i];
 	}
 	//for (x = 3; x <= arrayToDraw.length-1; x += 4) {
 	//	pixels[x] == 100;
