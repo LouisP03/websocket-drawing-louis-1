@@ -7,6 +7,8 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
+arrayToDraw = []
+
 chosenColour = {
 	R: redval,
 	G: greenval,
@@ -143,8 +145,7 @@ function mouseDragged() {
 	socket.emit('mouse', data);
 
 	loadPixels();
-	console.log(pixels);
-	console.log(pixels.length);
+	arrayToDraw = pixels;
 	updatePixels();
 }
 
@@ -188,8 +189,7 @@ function mousePressed() {
 		socket.emit('click', clickData);
 
 		loadPixels();
-		console.log(pixels);
-		console.log(pixels.length);
+		arrayToDraw = pixels;
 		updatePixels();
 	}
 
@@ -210,4 +210,8 @@ function saveToFile() {
 	var filename = `LVP_${cYear}-${cMonth}-${cDay}-${cHour}_${cMinute}_${cSecond}_canvas`;
 	saveCanvas(filename, 'png');
 
+}
+
+function drawFromPixelArray() {
+	console.log(arrayToDraw);
 }
