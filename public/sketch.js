@@ -116,6 +116,12 @@ function setup() {
 
 		loadPixels();
 		arrayToDraw = pixels;
+
+		myObj = {
+			array: pixels
+		};
+		myJSON = JSON.stringify(myObj);
+		localStorage.setItem("canvas_states", myJSON);
 		updatePixels();
 
 	})
@@ -155,6 +161,12 @@ function mouseDragged() {
 
 	loadPixels();
 	arrayToDraw = pixels;
+
+	myObj = {
+		array: pixels
+	};
+	myJSON = JSON.stringify(myObj);
+	localStorage.setItem("canvas_states", myJSON);
 	updatePixels();
 }
 
@@ -199,6 +211,12 @@ function mousePressed() {
 
 		loadPixels();
 		arrayToDraw = pixels;
+
+		myObj = {
+			array: pixels
+		};
+		myJSON = JSON.stringify(myObj);
+		localStorage.setItem("canvas_states", myJSON);
 		updatePixels();
 	}
 
