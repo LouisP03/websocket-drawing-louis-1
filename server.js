@@ -50,7 +50,7 @@ io.sockets.on('connection', (socket) => {
 
 	socket.on('onSave', (pixelArrayData) => {
 		socket.broadcast.emit('onSave', pixelArrayData);
-	})
+	});
 
 });
 

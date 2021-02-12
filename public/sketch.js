@@ -102,7 +102,15 @@ function setup() {
 	});
 
 	socket.on('onSave', (pixelArrayData) => {
-		drawFromPixelArray(pixelArrayData);
+		console.log(pixelArrayData.canvas_state);
+		//loadPixels();
+		//for (i = 0; i <= arrayToDraw.length-1; i++) {
+		//	pixels[i] = arrayToDraw[i];
+		//}
+		//for (x = 3; x <= arrayToDraw.length-1; x += 4) {
+		//	pixels[x] == 100;
+		//}
+		//updatePixels();
 	});
 
 	document.getElementById('resetButton').addEventListener('click', () => {
@@ -117,9 +125,9 @@ function setup() {
 
 	document.getElementById('saveButton').addEventListener('click', () => {
 		loadPixels();
-		pixelArrayData = {
+		var pixelArrayData = {
 			canvas_state: pixels
-		}
+		};
 		updatePixels();
 
 		socket.emit('onSave', pixelArrayData);
