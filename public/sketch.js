@@ -144,9 +144,9 @@ function mouseDragged() {
 
 	socket.emit('mouse', data);
 
-	//loadPixels();
-	//arrayToDraw = pixels;
-	//updatePixels();
+	loadPixels();
+	arrayToDraw = pixels;
+	updatePixels();
 }
 
 function mousePressed() {
@@ -214,13 +214,15 @@ function saveToFile() {
 
 function drawFromPixelArray() {
 	loadPixels();
-	arrayToDraw = pixels
 	for (i = 0; i <= arrayToDraw.length-1; i++) {
-		pixels[i] = arrayToDraw[i];
+		if ((i+1) % 4 == 0) {
+			pixels[i] = arrayToDraw[i];
+		} else {
+			pixels[i] = 255-arrayToDraw[i];
+		}
 	}
-	for (x = 3; x <= arrayToDraw.length-1; x += 4) {
-		pixels[x] == 100;
-	}
-
+	//for (x = 3; x <= arrayToDraw.length-1; x += 4) {
+	//	pixels[x] == 100;
+	//}
 	updatePixels();
 }
