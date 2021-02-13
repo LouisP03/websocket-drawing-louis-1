@@ -258,7 +258,7 @@ function saveToFile() {
 	saveCanvas(filename, 'png');
 
 };
-
+/*
 function drawFromPixelArray(pixelArrayData) {
 	arrayToDraw = pixelArrayData.canvas_state;
 	loadPixels();
@@ -269,7 +269,7 @@ function drawFromPixelArray(pixelArrayData) {
 	//	pixels[x] == 100;
 	//}
 	updatePixels();
-};
+};*/
 /*
 function save() {
 	loadPixels();
