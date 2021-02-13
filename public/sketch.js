@@ -93,12 +93,17 @@ function setup() {
 	socket.on('mouse', (data) => {
 		noStroke();
 		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-		
 		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		strokeWeight(parseInt(data.brushWidth));
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 
+	});
+
+	socket.on('click', (clickData) => {
+		noStroke();
+		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
+		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 	});
 
 	socket.on('onReset', (resetData) => {
@@ -229,8 +234,6 @@ function mousePressed() {
 				fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
 				ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 				socket.emit('click', clickData);
-		
-		
 			}
 		
 		} else {

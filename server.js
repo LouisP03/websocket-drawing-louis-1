@@ -43,6 +43,10 @@ io.sockets.on('connection', (socket) => {
 		canvasData.push(data);
 	});
 
+	socket.on('click', (clickData) => {
+		socket.broadcast.emit('click', clickData);
+	});
+
 	socket.on('onReset', (resetData) => {
 		socket.broadcast.emit('onReset', resetData);
 		console.log('Canvas reset by a client.')
