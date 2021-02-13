@@ -18,7 +18,7 @@ chosenColour = {
 };
 
 function setup() {
-	frameRate(60);
+	frameRate(30);
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
@@ -166,7 +166,6 @@ function mouseDragged() {
 			};
 
 			noStroke();
-			smooth();
 			fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 			strokeWeight(parseInt(data.brushWidth));
