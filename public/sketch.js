@@ -1,6 +1,9 @@
 var socket;
 var bwidth;
 
+canvas_width = 1000;
+canvas_height = 700;
+
 bwidth = document.getElementById('brush-width').value;
 
 var redval = document.getElementById('redc').value;
@@ -135,7 +138,7 @@ function setup() {
 	});
 
 
-	var canvas = createCanvas(1000, 700);
+	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
 	background(51);
 
@@ -144,75 +147,92 @@ function setup() {
 
 
 function mouseDragged() {
-	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
-	console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
-	//Creating a message to send to server
-	//name and data
+	if (mouseX >= 0 && mouseX <= canvas_width) {
+		if (mouseY >= 0 && mouseY <= canvas_height) {
+			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
+			console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
+			//Creating a message to send to server
+			//name and data
 
-	var data = {
-		x: mouseX,
-		y: mouseY,
-		px: pmouseX,
-		py: pmouseY,
-		brushWidth: bwidth,
-		redvalue: chosenColour.R,
-		greenvalue: chosenColour.G,
-		bluevalue: chosenColour.B
-	};
+			var data = {
+				x: mouseX,
+				y: mouseY,
+				px: pmouseX,
+				py: pmouseY,
+				brushWidth: bwidth,
+				redvalue: chosenColour.R,
+				greenvalue: chosenColour.G,
+				bluevalue: chosenColour.B
+			};
 
-	noStroke();
-	smooth();
-	fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-	ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-	strokeWeight(parseInt(data.brushWidth));
-	stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-	line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+			noStroke();
+			smooth();
+			fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+			strokeWeight(parseInt(data.brushWidth));
+			stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+			line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 
 
-	socket.emit('mouse', data);
+			socket.emit('mouse', data);
+		} else {
+			return;
+		}
+	} else {
+		return;
+	}
 
 }
 
 function mousePressed() {
-	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
+	if (mouseX >= 0 && mouseX <= canvas_width) {
+		if (mouseY >= 0 && mouseY <= canvas_height) {
+			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
 
-	var clickData = {
-		x: mouseX,
-		y: mouseY,
-		brushWidth: bwidth,
-		redvalue: chosenColour.R,
-		greenvalue: chosenColour.G,
-		bluevalue: chosenColour.B
-	};
-
-	var c = document.getElementById('dropperStatus');
-	if (c.checked) {
-		var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
-
-		document.getElementById('redc').value = dropperColour[0];
-		document.getElementById('greenc').value = dropperColour[1];
-		document.getElementById('bluec').value = dropperColour[2];
-
-		c.checked = false;
-
-		chosenColour = {
-			R: String(dropperColour[0]),
-			G: String(dropperColour[1]),
-			B: String(dropperColour[2])
-		  }
-
-		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
-		document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
-  
-
+			var clickData = {
+				x: mouseX,
+				y: mouseY,
+				brushWidth: bwidth,
+				redvalue: chosenColour.R,
+				greenvalue: chosenColour.G,
+				bluevalue: chosenColour.B
+			};
+		
+			var c = document.getElementById('dropperStatus');
+			if (c.checked) {
+				var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
+		
+				document.getElementById('redc').value = dropperColour[0];
+				document.getElementById('greenc').value = dropperColour[1];
+				document.getElementById('bluec').value = dropperColour[2];
+		
+				c.checked = false;
+		
+				chosenColour = {
+					R: String(dropperColour[0]),
+					G: String(dropperColour[1]),
+					B: String(dropperColour[2])
+				  }
+		
+				document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
+				document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
+		  
+		
+			} else {
+				noStroke();
+				smooth();
+				fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
+				ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
+				socket.emit('click', clickData);
+		
+		
+			}
+		
+		} else {
+			return;
+		}
 	} else {
-		noStroke();
-		smooth();
-		fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
-		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
-		socket.emit('click', clickData);
-
-
+		return;
 	}
 
 }
