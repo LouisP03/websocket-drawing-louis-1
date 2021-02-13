@@ -270,7 +270,7 @@ function drawFromPixelArray(pixelArrayData) {
 	//}
 	updatePixels();
 };
-
+/*
 function save() {
 	loadPixels();
 	var pixelArrayData = {
@@ -278,4 +278,4 @@ function save() {
 	};
 	updatePixels();
 	socket.emit('onSave', pixelArrayData);
-};
+};*/
