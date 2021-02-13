@@ -45,6 +45,9 @@ io.sockets.on('connection', (socket) => {
 
 	socket.on('click', (clickData) => {
 		socket.broadcast.emit('click', clickData);
+		console.log(clickData);
+
+		canvasData.push(clickData);
 	});
 
 	socket.on('onReset', (resetData) => {
@@ -56,5 +59,8 @@ io.sockets.on('connection', (socket) => {
 		socket.broadcast.emit('onSave', pixelArrayData);
 	});
 
+	socket.on('request', () => {
+		socket.emit(canvasData);
+	});
 });
 

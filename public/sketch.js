@@ -110,6 +110,10 @@ function setup() {
 		background(parseInt(resetData.bgColor));
 	});
 
+	socket.on('request', (canvasData) => {
+		console.log(canvasData);
+	});
+
 	/*
 	document.getElementById('saveButton').addEventListener('click', () => {
 		loadPixels();
@@ -261,6 +265,10 @@ function saveToFile() {
 	saveCanvas(filename, 'png');
 
 };
+
+function requestCanvas() {
+	socket.emit('request');
+}
 /*
 function drawFromPixelArray(pixelArrayData) {
 	arrayToDraw = pixelArrayData.canvas_state;
