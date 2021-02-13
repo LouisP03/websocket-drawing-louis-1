@@ -69,6 +69,7 @@ function setup() {
 		};
 	});
 
+
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	//socket = io.connect('127.0.0.1:3000')
@@ -104,15 +105,6 @@ function setup() {
 		background(parseInt(resetData.bgColor));
 	});
 
-	document.getElementById('resetButton').addEventListener('click', () => {
-		var resetData = {
-			bgColor: '51'
-		}
-		background(parseInt(resetData.bgColor));
-		//alert('Reset event detected.');
-		socket.emit('onReset', resetData);
-
-	});
 	/*
 	document.getElementById('saveButton').addEventListener('click', () => {
 		loadPixels();
@@ -126,7 +118,18 @@ function setup() {
 	});
 	*/
 
+	
+	document.getElementById('resetButton').addEventListener('click', () => {
+		var resetData = {
+			bgColor: '51'
+		}
+		background(parseInt(resetData.bgColor));
+		//alert('Reset event detected.');
+		socket.emit('onReset', resetData);
 
+	});
+
+/*
 	socket.on('onSave', (pixelArrayData) => {
 		console.log(pixelArrayData.canvas_state);
 		loadPixels();
@@ -137,7 +140,7 @@ function setup() {
 			pixels[x] == 100;
 		}
 		updatePixels();
-	});
+	});*/
 
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
