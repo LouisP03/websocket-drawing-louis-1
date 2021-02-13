@@ -112,6 +112,7 @@ function setup() {
 
 	socket.on('request', (canvasData) => {
 		console.log(canvasData);
+		console.log("Above is canvas data");
 	});
 
 	/*
