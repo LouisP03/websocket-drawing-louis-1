@@ -113,7 +113,7 @@ function setup() {
 		socket.emit('onReset', resetData);
 
 	});
-
+	/*
 	document.getElementById('saveButton').addEventListener('click', () => {
 		loadPixels();
 		var pixelArrayData = {
@@ -124,6 +124,8 @@ function setup() {
 		//console.log(pixelArrayData.canvas_state);
 		socket.emit('onSave', pixelArrayData);
 	});
+	*/
+
 
 	socket.on('onSave', (pixelArrayData) => {
 		console.log(pixelArrayData.canvas_state);
@@ -137,10 +139,11 @@ function setup() {
 		updatePixels();
 	});
 
-
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
 	background(51);
+
+	
 
 }
 
@@ -234,7 +237,7 @@ function mousePressed() {
 		return;
 	}
 
-}
+};
 
 
 function saveToFile() {
@@ -251,7 +254,7 @@ function saveToFile() {
 	var filename = `LVP_${cYear}-${cMonth}-${cDay}-${cHour}_${cMinute}_${cSecond}_canvas`;
 	saveCanvas(filename, 'png');
 
-}
+};
 
 function drawFromPixelArray(pixelArrayData) {
 	arrayToDraw = pixelArrayData.canvas_state;
@@ -263,4 +266,13 @@ function drawFromPixelArray(pixelArrayData) {
 	//	pixels[x] == 100;
 	//}
 	updatePixels();
-}
+};
+
+function save() {
+	loadPixels();
+	var pixelArrayData = {
+		canvas_state: pixels
+	};
+	updatePixels();
+	socket.emit('onSave', pixelArrayData);
+};

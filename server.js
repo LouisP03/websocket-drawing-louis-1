@@ -23,7 +23,6 @@ var io = socket(server);
 
 var connections = new Set();
 
-var canvasData = [];
 
 io.sockets.on('connection', (socket) => {
 	var id = socket.id;
