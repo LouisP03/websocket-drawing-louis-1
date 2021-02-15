@@ -4,8 +4,30 @@
         <title>
             WebSocket Drawing Application
         </title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">   
+        <style>
+            #title {
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+            }
+            button {
+                width: 200px;
+                height: 100px;
+                border: none;
+                background-color: #00ffcc;
+                color: black;
+                font-size: 40px;
+            }
+            button:hover {
+                color: black;
+                background-color: #e6fffa;
+            }
+
+        </style>
     </head>
     <body>
-        <button onclick="window.location='index.html'">Click Me</button>
+        <h1 id="title">Welcome to WebSocket Drawing Application</h1>
+        <button onclick="window.location='main.html'">Click Me</button>
     </body>
 </html>
