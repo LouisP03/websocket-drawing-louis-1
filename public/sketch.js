@@ -4,6 +4,9 @@ var bwidth;
 canvas_width = 1000;
 canvas_height = 700;
 
+var r = document.querySelector(':root');
+
+
 bwidth = document.getElementById('brush-width').value;
 
 var redval = document.getElementById('redc').value;
@@ -25,6 +28,10 @@ function setup() {
 		var redval = document.getElementById('redc').value;
 		var greenval = document.getElementById('greenc').value;
 		var blueval = document.getElementById('bluec').value;
+
+		cssRedVarSet(redval);
+		cssGreenVarSet(greenval);
+		cssBlueVarSet(blueval);
 
 		document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
 		document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
@@ -289,4 +296,16 @@ function resetCanvas() {
 	}
 	background(parseInt(resetData.bgColor));
 	socket.emit('onReset', resetData);
+}
+
+function cssRedVarSet(newValue) {
+	r.style.setProperty('--bg-red', newValue.toString());
+}
+
+function cssGreenVarSet(newValue) {
+	r.style.setProperty('--bg-green', newValue.toString());
+}
+
+function cssBlueVarSet(newValue) {
+	r.style.setProperty('--bg-blue', newValue.toString());
 }
