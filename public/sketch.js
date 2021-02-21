@@ -163,8 +163,8 @@ function setup() {
 
 
 function mouseDragged() {
-	if (mouseX >= 0 && mouseX <= canvas_width) {
-		if (mouseY >= 0 && mouseY <= canvas_height) {
+	if (mouseX >= (bwidth*-1) && mouseX <= (canvas_width+bwidth)) {
+		if (mouseY >= (bwidth*-1) && mouseY <= (canvas_height+bwidth)) {
 			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
 			console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
 			//Creating a message to send to server
@@ -200,8 +200,8 @@ function mouseDragged() {
 }
 
 function mousePressed() {
-	if (mouseX >= 0 && mouseX <= canvas_width) {
-		if (mouseY >= 0 && mouseY <= canvas_height) {
+	if (mouseX >= (bwidth*-1) && mouseX <= (canvas_width+bwidth)) {
+		if (mouseY >= (bwidth*-1) && mouseY <= (canvas_height+bwidth)) {
 			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
 
 			var clickData = {
