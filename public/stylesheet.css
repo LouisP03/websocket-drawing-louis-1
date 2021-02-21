@@ -179,11 +179,11 @@
 .checkmark:hover {
   background-color: #ccc;
 }
-
+/*
 .container input:checked ~ .checkmark {
   background-color: #2196f3;
 }
-/*
+
 .container input:checked ~ .checkmark:after {
   display: block;
 }

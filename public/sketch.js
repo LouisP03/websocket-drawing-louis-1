@@ -68,6 +68,7 @@ function setup() {
 			alert('Invalid entry. Using default width value of 36px.');
 		};
 	});
+
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
@@ -201,6 +202,7 @@ function mousePressed() {
 		
 			var c = document.getElementById('dropperStatus');
 			if (c.checked) {
+				c.style.background = '#2196f3';
 				var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
 		
 				document.getElementById('redc').value = dropperColour[0];
