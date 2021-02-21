@@ -91,9 +91,9 @@ function setup() {
 	});
 */
 	socket.on('mouse', (data) => {
-		noStroke();
-		fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-		ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+		//noStroke();
+		//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+		//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 		strokeWeight(parseInt(data.brushWidth));
 		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 		line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
@@ -181,9 +181,9 @@ function mouseDragged() {
 				bluevalue: chosenColour.B
 			};
 
-			noStroke();
-			fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+			//noStroke();
+			//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+			//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 			strokeWeight(parseInt(data.brushWidth));
 			stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 			line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
