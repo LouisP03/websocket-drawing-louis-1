@@ -93,7 +93,7 @@
 .colourSlider#redc::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: rgb(var, 0, 0);
+  background: rgb(var(--bg-red), 0, 0);
   cursor: pointer;
 }
 /*--------------------------------------------------------------------------*/
@@ -103,14 +103,14 @@
   appearance: none;
   width: 25px;
   height: 25px;
-  background: rgb(0, 255, 0);
+  background: rgb(0, var(--bg-green), 0);
   cursor: pointer;
 }
 
 .colourSlider#greenc::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: rgb(0, 255, 0);
+  background: rgb(0, var(--bg-green), 0);
   cursor: pointer;
 }
 /*--------------------------------------------------------------------------*/
@@ -120,14 +120,14 @@
   appearance: none;
   width: 25px;
   height: 25px;
-  background: rgb(0, 0, 255);
+  background: rgb(0, 0, var(--bg-blue));
   cursor: pointer;
 }
 
 .colourSlider#bluec::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: rgb(0, 0, 255);
+  background: rgb(0, 0, var(--bg-blue));
   cursor: pointer;
 }
 /*-------------------------------------------------------------------------0*/
