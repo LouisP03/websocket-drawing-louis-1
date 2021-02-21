@@ -128,16 +128,6 @@ function setup() {
 	});
 	*/
 
-	
-	document.getElementById('resetButton').addEventListener('click', () => {
-		var resetData = {
-			bgColor: '255'
-		}
-		background(parseInt(resetData.bgColor));
-		//alert('Reset event detected.');
-		socket.emit('onReset', resetData);
-
-	});
 
 /*
 	socket.on('onSave', (pixelArrayData) => {
@@ -291,3 +281,12 @@ function save() {
 	updatePixels();
 	socket.emit('onSave', pixelArrayData);
 };*/
+
+
+function resetCanvas() {
+	var resetData = {
+		bgColor: '255'
+	}
+	background(parseInt(resetData.bgColor));
+	socket.emit('onReset', resetData);
+}
