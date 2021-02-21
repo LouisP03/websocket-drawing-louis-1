@@ -140,11 +140,12 @@
 
 .buttons {
   height: 20px;
-  width: 20%;
+  width: 250px;
   border: 2px solid grey;
   background: white;
   color: black;
   font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 .buttons:hover {
   background: lightgrey;
