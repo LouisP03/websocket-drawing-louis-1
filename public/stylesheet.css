@@ -14,8 +14,8 @@
   text-align: center;
   margin: 0 auto;
   /*the following properties are changed through JS*/
-  border-left: 36px solid rgb(0, 0, 0);
-  border-right: 36px solid rgb(0, 0, 0);
+  border-left: 10px solid rgb(0, 0, 0);
+  border-right: 10px solid rgb(0, 0, 0);
 }
 
 .slidecontainer,
@@ -68,6 +68,7 @@
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 .colourSlider:hover {
@@ -146,9 +147,55 @@
   color: black;
   font-family: "Poppins", sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 .buttons:hover {
   background: lightgrey;
+}
+
+.cbContainer {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.cbContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0px;
+  width: 0px;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 #settings {
