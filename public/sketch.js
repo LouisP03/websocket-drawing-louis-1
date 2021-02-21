@@ -18,7 +18,7 @@ chosenColour = {
 };
 
 function setup() {
-	frameRate(30);
+	frameRate(60);
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
@@ -131,7 +131,7 @@ function setup() {
 	
 	document.getElementById('resetButton').addEventListener('click', () => {
 		var resetData = {
-			bgColor: '51'
+			bgColor: '255'
 		}
 		background(parseInt(resetData.bgColor));
 		//alert('Reset event detected.');
@@ -154,7 +154,7 @@ function setup() {
 
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
-	background(51);
+	background(255);
 
 	
 
