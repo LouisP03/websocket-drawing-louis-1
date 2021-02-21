@@ -137,10 +137,17 @@
 .InsideContent {
   display: inline-block;
 }
-#divButton {
-  font-family: monospace;
-  position: relative;
-  margin: 0 auto;
+
+button.InsideContent {
+  height: 20px;
+  width: 80px;
+  border: 2px solid grey;
+  background: white;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+button.InsideContent:hover {
+  background: lightgrey;
 }
 
 #settings {
