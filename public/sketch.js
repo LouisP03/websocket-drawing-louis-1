@@ -202,7 +202,7 @@ function mousePressed() {
 		
 			var c = document.getElementById('dropperStatus');
 			if (c.checked) {
-				c.style.background = '#2196f3';
+				document.getElementById('dropperStatus').style.backround = '#2196f3';
 				var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
 		
 				document.getElementById('redc').value = dropperColour[0];
@@ -221,7 +221,7 @@ function mousePressed() {
 		
 				document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
 				document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
-				c.style.background = '#eee';
+				document.getElementById('dropperStatus').style.backround = '#eee';
 		
 			} else {
 				noStroke();
