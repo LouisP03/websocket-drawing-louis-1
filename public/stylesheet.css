@@ -156,6 +156,7 @@
 .cbContainer {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  padding-left: 75px;
 }
 
 .cbContainer input {
@@ -169,20 +170,20 @@
 .checkmark {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 800px;
   height: 30px;
   width: 30px;
   background-color: #eee;
 }
 
-.container:hover input ~ .checkmark {
+.checkmark:hover {
   background-color: #ccc;
 }
 
 .container input:checked ~ .checkmark {
   background-color: #2196f3;
 }
-
+/*
 .container input:checked ~ .checkmark:after {
   display: block;
 }
@@ -197,7 +198,7 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
+*/
 #settings {
   position: relative;
   width: 1000px;

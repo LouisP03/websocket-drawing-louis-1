@@ -68,8 +68,10 @@ function setup() {
 			alert('Invalid entry. Using default width value of 36px.');
 		};
 	});
-
-
+	
+	var canvas = createCanvas(canvas_width, canvas_height);
+	canvas.parent('containerDiv');
+	background(255);
 	
 	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
 	//socket = io.connect('127.0.0.1:3000')
@@ -141,12 +143,6 @@ function setup() {
 		}
 		updatePixels();
 	});*/
-
-	var canvas = createCanvas(canvas_width, canvas_height);
-	canvas.parent('containerDiv');
-	background(255);
-
-	
 
 }
 
