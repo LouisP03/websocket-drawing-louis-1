@@ -206,7 +206,8 @@ function mousePressed() {
 				document.getElementById('redc').value = dropperColour[0];
 				document.getElementById('greenc').value = dropperColour[1];
 				document.getElementById('bluec').value = dropperColour[2];
-				document.getElementById('colourBlock').style.background = `(${dropperColour[0]},${dropperColour[1]},${dropperColour[2]})`;
+				document.getElementById('colourBlock').style.background = `rgb(${dropperColour[0]},${dropperColour[1]},${dropperColour[2]})`;
+				//'rgb(' + dropperColour[0] + ',' + dropperColour[1] + ',' + dropperColour[2] + ')';
 		
 				c.checked = false;
 		
