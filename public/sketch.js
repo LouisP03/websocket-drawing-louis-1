@@ -76,6 +76,13 @@ function setup() {
 		};
 	});
 
+	var messageInput = document.getElementById("messageEntry");
+	messageInput.addEventListener("keyup", (event) => {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			document.getElementById("messageSendButton").click();
+		}
+	});
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
@@ -123,6 +130,15 @@ function setup() {
 	socket.on('request', (canvasData) => {
 		console.log(canvasData);
 		console.log("Above is canvas data");
+	});
+
+	socket.on('chat', (message) => {
+		console.log("Received Message: " + message);
+		var chatDump = document.querySelector('.chat-dump');
+		var div = document.createElement("div");
+		div.classList.add('chat-message');
+		div.innerText(">> " + message);
+		chatDump.appendChild(div);
 	});
 
 	/*
@@ -246,6 +262,18 @@ function mousePressed() {
 	}
 
 };
+
+
+function sendMessage() {
+	message = document.getElementById("messageEntry").value;
+	var chatDump = document.querySelector('.chat-dump');
+	var div = document.createElement("div");
+	div.classList.add('chat-message');
+	div.innerText(">> " + message);
+	chatDump.appendChild(div);
+	socket.emit('chat', message);
+	console.log("Sent Message: " + message);
+}
 
 
 function saveToFile() {

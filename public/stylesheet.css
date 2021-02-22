@@ -224,9 +224,12 @@
   top: 150px;
   border: 5px solid black;
   background: white;
+  font-family: monospace;
+  font-size: 16px;
 }
 
 #messageSendButton {
+  position: relative;
   font-family: "Poppins", sans-serif;
   margin: 5px 0 5px 0;
   border: 2px solid grey;
@@ -235,6 +238,7 @@
   align-items: center;
   cursor: pointer;
   text-align: center;
+  right: 0px;
 }
 
 #messageSendButton:hover {
@@ -245,9 +249,11 @@
   font-family: "Poppins", sans-serif;
   border: 2px solid grey;
   color: black;
+  width: 315px;
 }
 
 #messageContainer {
+  position: relative;
   width: 380px;
-  top: 0;
+  top: 98%;
 }
