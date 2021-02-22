@@ -225,3 +225,29 @@
   border: 5px solid black;
   background: white;
 }
+
+#messageSendButton {
+  font-family: "Poppins", sans-serif;
+  margin: 5px 0 5px 0;
+  border: 2px solid grey;
+  background: white;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+#messageSendButton:hover {
+  color: lightgrey;
+}
+
+#messageEntry {
+  font-family: "Poppins", sans-serif;
+  border: 2px solid grey;
+  color: black;
+}
+
+#messageContainer {
+  width: 380px;
+  top: 0;
+}

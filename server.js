@@ -64,5 +64,8 @@ io.sockets.on('connection', (socket) => {
 	socket.on('request', () => {
 		socket.emit(canvasData);
 	});
+
+
+	
 });
 
