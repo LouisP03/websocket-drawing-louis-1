@@ -274,7 +274,7 @@ function sendMessage() {
 	chatDump.appendChild(div);
 	socket.emit('chat', message);
 	console.log("Sent Message: " + message);
-	message = '';
+	document.getElementById("messageEntry").value = '';
 }
 
 
