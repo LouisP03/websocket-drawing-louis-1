@@ -69,7 +69,7 @@ io.sockets.on('connection', (socket) => {
 		socket.broadcast.emit('chat', message);
 	});
 
-	socket.on('onResetChatbox', () => {
+	socket.on('onResetChat', () => {
 		socket.broadcast.emit('onResetChat');
 	});
 
