@@ -26,7 +26,7 @@
 
 .slidecontainer,
 .colourPicker {
-  position: fixed;
+  position: relative;
   width: 1000px;
   height: auto;
   margin: auto;
@@ -132,7 +132,7 @@
 }
 /*-------------------------------------------------------------------------0*/
 #colourBlock {
-  position: fixed;
+  position: relative;
   width: 1000px;
   height: 25px;
   margin: auto;
@@ -206,8 +206,8 @@
 }
 */
 #settings {
-  position: fixed;
-  width: 1000px;
-  margin: 0 auto;
+  position: relative;
+  width: 300px;
+  margin-left: 5px;
   height: auto;
 }
