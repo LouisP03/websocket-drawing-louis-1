@@ -255,7 +255,7 @@
 #messageContainer {
   position: relative;
   width: 380px;
-  top: 98%;
+  top: 100%;
 }
 
 .chat-dump {

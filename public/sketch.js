@@ -139,6 +139,7 @@ function setup() {
 		div.classList.add('chat-message');
 		div.innerText = ">> " + message;
 		chatDump.appendChild(div);
+
 	});
 
 	/*
@@ -273,6 +274,7 @@ function sendMessage() {
 	chatDump.appendChild(div);
 	socket.emit('chat', message);
 	console.log("Sent Message: " + message);
+	message = '';
 }
 
 
