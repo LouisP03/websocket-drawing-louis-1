@@ -270,7 +270,7 @@ function sendMessage() {
 	var chatDump = document.querySelector('.chat-dump');
 	var div = document.createElement("div");
 	div.classList.add('chat-message');
-	div.innerText = "<strong>>></strong> " + message;
+	div.innerText = ">> " + message;
 	chatDump.appendChild(div);
 	socket.emit('chat', message);
 	console.log("Sent Message: " + message);
