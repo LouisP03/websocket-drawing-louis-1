@@ -65,7 +65,7 @@ io.sockets.on('connection', (socket) => {
 		socket.emit(canvasData);
 	});
 
-	socket.on('chat', (message) => {
+	socket.on('chat', (messageData) => {
 		socket.broadcast.emit('chat', message);
 	});
 

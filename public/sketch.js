@@ -4,6 +4,8 @@ var bwidth;
 canvas_width = 1000;
 canvas_height = 700;
 
+chatName = "";
+
 var r = document.querySelector(':root');
 
 
@@ -83,6 +85,12 @@ function setup() {
 			document.getElementById("messageSendButton").click();
 		}
 	});
+
+	document.getElementById("enterName").addEventListener('input', () => {
+		var name = document.getElementById("enterName").value;
+		document.getElementById("chosenName").innerHTML = "Chosen Name: " + name.toString();
+		chosenName = name;
+	});
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
@@ -132,12 +140,12 @@ function setup() {
 		console.log("Above is canvas data");
 	});
 
-	socket.on('chat', (message) => {
-		console.log("Received Message: " + message);
+	socket.on('chat', (messageData) => {
+		console.log("Received Message: " + messageData.msg);
 		var chatDump = document.querySelector('.chat-dump');
 		var div = document.createElement("div");
 		div.classList.add('chat-message');
-		div.innerText = ">> " + message;
+		div.innerText = messageData.clientName + " >> " + message;
 		chatDump.appendChild(div);
 	});
 
@@ -275,13 +283,17 @@ function mousePressed() {
 
 
 function sendMessage() {
-	message = document.getElementById("messageEntry").value;
+	var message = document.getElementById("messageEntry").value;
+	var messageData = {
+		msg: message,
+		clientName: chatName
+	};
 	var chatDump = document.querySelector('.chat-dump');
 	var div = document.createElement("div");
 	div.classList.add('chat-message');
-	div.innerText = ">> " + message;
+	div.innerText = chatName + " >> " + message;
 	chatDump.appendChild(div);
-	socket.emit('chat', message);
+	socket.emit('chat', messageData);
 	console.log("Sent Message: " + message);
 	document.getElementById("messageEntry").value = '';
 }
