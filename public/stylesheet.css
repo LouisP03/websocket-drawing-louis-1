@@ -147,7 +147,7 @@
 
 .buttons {
   height: 30px;
-  width: 300px;
+  width: 380px;
   padding: 10px;
   margin: 5px 0 5px 0;
   border: 2px solid grey;
@@ -210,7 +210,7 @@
 */
 #settings {
   position: absolute;
-  width: 300px;
+  width: 380px;
   margin-left: 5px;
   height: auto;
   top: 10px;
@@ -218,7 +218,7 @@
 
 #chatboxContainer {
   position: absolute;
-  width: 300px;
+  width: 380px;
   margin-left: 5px;
   height: 80%;
   top: 150px;
