@@ -142,7 +142,11 @@ function setup() {
 	});
 
 	socket.on('onResetChat', () => {
-		resetChatbox();
+		var parent = document.querySelector('.chat-dump');
+		while (parent.lastChild) {
+			parent.removeChild(parent.lastChild);
+		};
+		console.log("Reset canvas.");
 	});
 
 
