@@ -249,11 +249,15 @@
   font-family: "Poppins", sans-serif;
   border: 2px solid grey;
   color: black;
-  width: 315px;
+  width: 300px;
 }
 
 #messageContainer {
   position: relative;
   width: 380px;
   top: 98%;
+}
+
+.chat-dump {
+  position: relative;
 }

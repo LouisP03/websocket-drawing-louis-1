@@ -137,7 +137,7 @@ function setup() {
 		var chatDump = document.querySelector('.chat-dump');
 		var div = document.createElement("div");
 		div.classList.add('chat-message');
-		div.innerText(">> " + message);
+		div.innerText = ">> " + message;
 		chatDump.appendChild(div);
 	});
 
