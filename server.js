@@ -52,7 +52,7 @@ io.sockets.on('connection', (socket) => {
 		canvasData.push(clickData);
 	});
 
-	socket.on('onReset', (resetData) => {
+	socket.on('onResetCanvas', (resetData) => {
 		socket.broadcast.emit('onReset', resetData);
 		console.log('Canvas reset by a client.')
 	});
@@ -67,7 +67,11 @@ io.sockets.on('connection', (socket) => {
 
 	socket.on('chat', (message) => {
 		socket.broadcast.emit('chat', message);
-	})
+	});
+
+	socket.on('onResetChatbox', () => {
+		socket.broadcast.emit('onResetChat');
+	});
 
 });
 

@@ -123,7 +123,7 @@ function setup() {
 		ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
 	});
 
-	socket.on('onReset', (resetData) => {
+	socket.on('onResetCanvas', (resetData) => {
 		background(parseInt(resetData.bgColor));
 	});
 
@@ -139,8 +139,13 @@ function setup() {
 		div.classList.add('chat-message');
 		div.innerText = ">> " + message;
 		chatDump.appendChild(div);
-
 	});
+
+	socket.on('onResetChat', () => {
+		resetChatbox();
+	});
+
+
 
 	/*
 	document.getElementById('saveButton').addEventListener('click', () => {
@@ -323,9 +328,18 @@ function save() {
 function resetCanvas() {
 	var resetData = {
 		bgColor: '255'
-	}
+	};
 	background(parseInt(resetData.bgColor));
-	socket.emit('onReset', resetData);
+	socket.emit('onResetCanvas', resetData);
+}
+
+funtion resetChatbox() {
+	var parent = document.querySelector('.chat-dump');
+	while (parent.lastChild) {
+		parent.removeChild(parent.lastChild);
+	};
+	socket.emit('onResetChat')
+	console.log("Reset canvas.")
 }
 
 function cssRedVarSet(newValue) {
