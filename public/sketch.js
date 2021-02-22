@@ -4,7 +4,7 @@ var bwidth;
 canvas_width = 1000;
 canvas_height = 700;
 
-chatName = "";
+chosenName = "";
 
 var r = document.querySelector(':root');
 
@@ -88,7 +88,7 @@ function setup() {
 
 	document.getElementById("enterName").addEventListener('input', () => {
 		var name = document.getElementById("enterName").value;
-		document.getElementById("chosenName").innerHTML = "Chosen Name: " + name.toString();
+		document.getElementById("chosenName").innerHTML = "Chosen Name: " + name;
 		chosenName = name;
 	});
 	
@@ -286,7 +286,7 @@ function sendMessage() {
 	var message = document.getElementById("messageEntry").value;
 	var messageData = {
 		msg: message,
-		clientName: chatName
+		clientName: chosenName
 	};
 	var chatDump = document.querySelector('.chat-dump');
 	var div = document.createElement("div");
