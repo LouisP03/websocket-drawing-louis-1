@@ -147,13 +147,16 @@
 
 .buttons {
   height: 30px;
-  width: 250px;
+  width: 300px;
+  padding: 10px;
+  margin: 5px 0 5px 0;
   border: 2px solid grey;
   background: white;
   color: black;
   font-family: "Poppins", sans-serif;
   text-align: center;
   cursor: pointer;
+  align-items: center;
 }
 .buttons:hover {
   background: lightgrey;
@@ -206,8 +209,9 @@
 }
 */
 #settings {
-  position: relative;
+  position: absolute;
   width: 300px;
   margin-left: 5px;
   height: auto;
+  top: 10px;
 }
