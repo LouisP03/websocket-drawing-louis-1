@@ -259,8 +259,8 @@
 }
 
 .chat-dump {
-  position: absolute; /*
+  /*position: absolute;*/
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 5px;*/
+  padding: 5px;
 }
