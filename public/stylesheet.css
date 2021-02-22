@@ -215,3 +215,13 @@
   height: auto;
   top: 10px;
 }
+
+#chatboxContainer {
+  position: absolute;
+  width: 300px;
+  margin-left: 5px;
+  height: 80%;
+  top: 150px;
+  border: 5px solid black;
+  background: white;
+}
