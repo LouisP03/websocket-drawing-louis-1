@@ -331,15 +331,15 @@ function resetCanvas() {
 	};
 	background(parseInt(resetData.bgColor));
 	socket.emit('onResetCanvas', resetData);
-}
+};
 
-funtion resetChatbox() {
+function resetChatbox() {
 	var parent = document.querySelector('.chat-dump');
 	while (parent.lastChild) {
 		parent.removeChild(parent.lastChild);
 	};
-	socket.emit('onResetChat')
-	console.log("Reset canvas.")
+	socket.emit('onResetChat');
+	console.log("Reset canvas.");
 }
 
 function cssRedVarSet(newValue) {
