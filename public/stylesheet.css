@@ -264,6 +264,6 @@
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  white-space: normal;
+  word-wrap: break-word;
   padding: 5px;
 }
