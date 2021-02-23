@@ -304,7 +304,7 @@ function sendMessage() {
 	socket.emit('chat', messageData);
 	console.log("Sent Message: " + message);
 	document.getElementById("messageEntry").value = '';
-	document.querySelector(".chat-dump").scrollTop(document.querySelector(".chat-dump").children().height());
+	chatDump.scrollTop(chatDump.children().height());
 }
 
 
