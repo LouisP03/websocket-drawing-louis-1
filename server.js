@@ -26,10 +26,18 @@ var connections = new Set();
 
 var canvasData = [];
 
+var users = [];
+
 io.sockets.on('connection', (socket) => {
 	var id = socket.id;
 	console.log('New client connection: ' + id);
 	connections.add(socket);
+
+	socket.on('user_connected', (username) => {
+		users[username] = socket.id;
+
+		socket.emit('user_connected', username);
+	});
 
 	socket.on('disconnect', () => {
 		console.log('Client disconnected: ' + id);

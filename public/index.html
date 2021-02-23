@@ -27,9 +27,17 @@
             }
 
         </style>
+        <script src="sketch.js" type="text/javascript"></script>
+
     </head>
     <body>
         <h1 id="title">Welcome to WebSocket Drawing Application</h1>
         <button onclick="window.location='main.html'">Click Me</button>
+
+        <form onsubmit="return enterName();">
+            <input type="text" id="name" placeholder="Enter your name"></input>
+            <input type="submit">
+        </form>
+        
     </body>
 </html>

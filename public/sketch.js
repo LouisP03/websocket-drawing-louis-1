@@ -160,6 +160,10 @@ function setup() {
 		console.log("Reset canvas.");
 	});
 
+	socket.on('user_connected', (username) => {
+		console.log(username);
+	});
+
 
 
 	/*
@@ -377,6 +381,13 @@ function toggleDropper() {
 		dropperStatus = false;
 		document.body.style.cursor = "auto";
 	}
+}
+
+function enterName() {
+	var name = document.getElementById("name").value;
+	socket.emit("user_connected", name);
+
+	return false;
 }
 
 //--------------------------------------------------------
