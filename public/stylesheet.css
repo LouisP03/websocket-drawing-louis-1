@@ -152,7 +152,7 @@
   width: 380px;
   padding: 10px;
   margin: 5px 0 5px 0;
-  border: 2px solid grey;
+  border: 4px solid #33001a;
   background: white;
   color: black;
   font-family: "Poppins", sans-serif;
@@ -211,7 +211,7 @@
   position: relative;
   font-family: "Poppins", sans-serif;
   /*margin: 5px 0 5px 0;*/
-  border: 2px solid grey;
+  border: 4px solid #33001a;
   background: white;
   color: black;
   align-items: center;
@@ -229,7 +229,7 @@
 #messageEntry {
   position: relative;
   font-family: "Poppins", sans-serif;
-  border: 2px solid grey;
+  border: 4px solid #33001a;
   color: black;
   width: 100%;
   left: -4px;
