@@ -5,9 +5,7 @@ canvas_width = 1000;
 canvas_height = 700;
 
 chosenName = "";
-
-var r = document.querySelector(':root');
-
+dropperStatus = false;
 
 bwidth = document.getElementById('brush-width').value;
 
@@ -92,11 +90,6 @@ function setup() {
 		chosenName = name;
 	});
 
-	document.getElementById("dropperStatus").addEventListener('input', () => {
-		if (document.getElementById("dropperStatus").checked) {
-			document.body.style.cursor = "url('dropper.ico')";
-		};
-	});
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
@@ -237,9 +230,7 @@ function mouseDragged() {
 
 }
 
-function mousePressed() {
-	var c = document.getElementById('dropperStatus');
-	
+function mousePressed() {	
 	if (mouseX >= 0/*(bwidth*-1)*/ && mouseX <= (canvas_width/*+bwidth*/)) {
 		if (mouseY >= 0/*(bwidth*-1)*/ && mouseY <= (canvas_height/*+bwidth*/)) {
 			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
@@ -253,7 +244,7 @@ function mousePressed() {
 				bluevalue: chosenColour.B
 			};
 		
-			if (c.checked) {
+			if (dropperStatus) {
 				//document.getElementById('dropperStatus').style.backround = '#2196f3';
 				var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
 		
@@ -263,7 +254,7 @@ function mousePressed() {
 				document.getElementById('colourBlock').style.background = `rgb(${dropperColour[0]},${dropperColour[1]},${dropperColour[2]})`;
 				//'rgb(' + dropperColour[0] + ',' + dropperColour[1] + ',' + dropperColour[2] + ')';
 		
-				c.checked = false;
+				dropperStatus = false;
 		
 				chosenColour = {
 					R: String(dropperColour[0]),
@@ -371,6 +362,17 @@ function resetChatbox() {
 	socket.emit('onResetChat');
 	console.log("Reset canvas.");
 }
+
+function toggleDropper() {
+	if (dropperStatus === false) {
+		dropperStatus = true;
+	} else {
+		dropperStatus = false;
+	}
+}
+
+//--------------------------------------------------------
+var r = document.querySelector(':root');
 
 function cssRedVarSet(newValue) {
 	r.style.setProperty('--bg-red', newValue.toString());
