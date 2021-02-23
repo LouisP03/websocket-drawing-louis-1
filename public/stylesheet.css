@@ -182,7 +182,7 @@
   left: 5px;
   height: 80%;
   top: 40px;
-  border: 5px solid black;
+  border: 3px solid #33001a;
   background: white;
   font-family: monospace;
   font-size: 16px;
@@ -250,7 +250,7 @@
   position: relative;
   display: inline;
   font-family: "Poppins", sans-serif;
-  border: 2px solid grey;
+  border: 3px solid #33001a;
   color: black;
   width: 100%;
   left: -4px;
