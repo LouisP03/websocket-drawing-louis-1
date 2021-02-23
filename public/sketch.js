@@ -88,7 +88,7 @@ function setup() {
 
 	document.getElementById("enterName").addEventListener('input', () => {
 		var name = document.getElementById("enterName").value;
-		document.getElementById("chosenName").innerHTML = "Chosen Name: " + name;
+		//document.getElementById("chosenName").innerHTML = "Chosen Name: " + name;
 		chosenName = name;
 	});
 	

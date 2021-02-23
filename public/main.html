@@ -39,60 +39,66 @@
       </div>
 
 
-      <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="10" class="slider" id="brush-width"></input>
-      </div>
+      
 
-      <div id="settings">
-        <div id="divButton1" class="InsideContent">
-          <button type="button" class="buttons" onclick="resetCanvas();">Reset Canvas</button>
-        </div>
-        <!--<div id="divButton2" class="InsideContent">
-          <input type="button" value="SAVE" id="saveButton" style="font-family: monospace"></input>
-          <button type="button" onclick="save();">SAVE</button>
-        </div>-->
-        <div id="divButton3" class="InsideContent">
-          <button type="button" class="buttons" onclick="saveToFile();">Save Canvas</button>
-        </div>
-        <div id="divButton4" class="InsideContent">
-          <button type="button" class="buttons" onclick="requestCanvas();">Request Canvas</button>
-        </div>
-        <div id="divCheckbox" class="InsideContent">
-          <label class="cbContainer">Colour Dropper
-            <input type="checkbox" id="dropperStatus" name="status" value="dropperStatus"></input>
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div id="divButton5" class="InsideContent">
-          <button type="button" class="buttons" onclick="resetChatbox();">Reset Chat</button>
-        </div>
-        
-      </div>
-
-      <div class="colourPicker">
-        <input type="range" min="0" max="255" value="0" class="colourSlider" id="redc"></input>
-        <input type="range" min="0" max="255" value="0" class="colourSlider" id="greenc"></input>
-        <input type="range" min="0" max="255" value="0" class="colourSlider" id="bluec"></input>
-      </div>
-
-      <div id="colourBlock">YOUR COLOUR</div>
-
-      <div id="chatboxContainer">
-        <div id="divInput1" class="InsideContent">
-          <input type="text" autocomplete="off" id="enterName" name="enterName" placeholder="Enter your name"></input>
-          <p id="chosenName"></p>
-        </div>
-        <div class="chat-dump">
+      <div id="sidebarLeft" class="sidebar">
+        <div id="settings">
+          <div id="divButton1" class="InsideContent">
+            <button type="button" class="buttons" onclick="resetCanvas();">Reset Canvas</button>
+          </div>
+          <!--<div id="divButton2" class="InsideContent">
+            <input type="button" value="SAVE" id="saveButton" style="font-family: monospace"></input>
+            <button type="button" onclick="save();">SAVE</button>
+          </div>-->
+          <div id="divButton3" class="InsideContent">
+            <button type="button" class="buttons" onclick="saveToFile();">Save Canvas</button>
+          </div>
+          <div id="divButton4" class="InsideContent">
+            <button type="button" class="buttons" onclick="requestCanvas();">Request Canvas</button>
+          </div>
+          <div id="divCheckbox" class="InsideContent">
+            <label class="cbContainer">Colour Dropper
+              <input type="checkbox" id="dropperStatus" name="status" value="dropperStatus"></input>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div id="divButton5" class="InsideContent">
+            <button type="button" class="buttons" onclick="resetChatbox();">Reset Chat</button>
+          </div>
           
-        </div>
-        <div id="messageContainer">
-          <input type="text" autocomplete="off" placeholder="Enter Message" id="messageEntry" name="messageEntry"></input>
-          <button type="button" onclick="sendMessage();" id="messageSendButton">Send</button>
         </div>
       </div>
       
+      <div id="brushProperties">
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="10" class="slider" id="brush-width"></input>
+        </div>
+  
+        <div class="colourPicker">
+          <input type="range" min="0" max="255" value="0" class="colourSlider" id="redc"></input>
+          <input type="range" min="0" max="255" value="0" class="colourSlider" id="greenc"></input>
+          <input type="range" min="0" max="255" value="0" class="colourSlider" id="bluec"></input>
+        </div>
+  
+        <div id="colourBlock">YOUR COLOUR</div>
+      </div>
 
 
+      <div id="sidebarRight" class="sidebar">
+        <div id="chatboxContainer">
+          <div id="divInput1">
+            <input type="text" autocomplete="off" id="enterName" name="enterName" placeholder="Enter your name"></input>
+            <!--<p id="chosenName"></p>-->
+          </div>
+          <div class="chat-dump">
+            
+          </div>
+          <div id="newMessageContainer">
+            <input type="text" autocomplete="off" placeholder="Enter Message" id="messageEntry" name="messageEntry"></input>
+            <button type="button" onclick="sendMessage();" id="messageSendButton">Send</button>
+          </div>
+        </div>  
+      </div>
     </div>
   
     <script src="libraries/p5.js" type="text/javascript"></script>

@@ -16,7 +16,9 @@
   width: 1000px;
   height: 100%;
   padding: 10px;
-  background: #ee959e;
+  /*background: #ee959e; BABY PINK*/
+  /*background: #ccffe5;*/
+  background: #99ffca;
   text-align: center;
   margin: 0 auto;
   /*the following properties are changed through JS*/
@@ -158,56 +160,11 @@
   cursor: pointer;
   align-items: center;
 }
+
 .buttons:hover {
   background: lightgrey;
 }
-/*
-.cbContainer {
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  padding-left: 75px;
-}
 
-.cbContainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0px;
-  width: 0px;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 800px;
-  height: 30px;
-  width: 30px;
-  background-color: #eee;
-}
-
-.checkmark:hover {
-  background-color: #ccc;
-}
-/*
-.container input:checked ~ .checkmark {
-  background-color: #2196f3;
-}
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 5px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-*/
 #settings {
   position: absolute;
   width: 380px;
@@ -216,53 +173,19 @@
   top: 10px;
 }
 
+/*Styling for the main chatbox container as well as for the DIV elements of each individual message*/
+/*--------------------------------------------------------------------------------*/
+
 #chatboxContainer {
   position: absolute;
   width: 380px;
-  left: 80%;
+  left: 5px;
   height: 80%;
   top: 40px;
   border: 5px solid black;
   background: white;
   font-family: monospace;
   font-size: 16px;
-}
-
-#messageSendButton {
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  margin: 5px 0 5px 0;
-  border: 2px solid grey;
-  background: white;
-  color: black;
-  align-items: center;
-  cursor: pointer;
-  text-align: center;
-  right: 0px;
-}
-
-#messageSendButton:hover {
-  color: lightgrey;
-}
-
-#messageEntry {
-  font-family: "Poppins", sans-serif;
-  border: 2px solid grey;
-  color: black;
-  width: 300px;
-}
-
-#messageContainer {
-  position: relative;
-  width: 380px;
-  top: 100%;
-}
-
-#divInput1 {
-  position: relative;
-  width: 380px;
-  top: -30px;
-  word-wrap: break-word;
 }
 
 .chat-dump {
@@ -275,10 +198,81 @@
   padding: 0px;
 }
 
-#enterName {
-  display: inline;
+/*--------------------------------------------------------------------------------*/
+/*Styling for the inputs for a message to be sent to the chatbox*/
+
+#newMessageContainer {
+  position: relative;
+  width: 380px;
+  top: calc(97% + 1px);
 }
 
-#chosenName {
-  display: inline;
+#messageSendButton {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  /*margin: 5px 0 5px 0;*/
+  border: 2px solid grey;
+  background: white;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  width: calc(100% + 8px);
+  top: 5px;
+  left: -4px;
 }
+
+#messageSendButton:hover {
+  background: lightgrey;
+}
+
+#messageEntry {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid grey;
+  color: black;
+  width: 100%;
+  left: -4px;
+  top: 4px;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*Styling for the name entry input above the main chatbox*/
+
+#divInput1 {
+  position: relative;
+  width: 380px;
+  top: -32px;
+  word-wrap: break-word;
+}
+
+#enterName {
+  position: relative;
+  display: inline;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid grey;
+  color: black;
+  width: 100%;
+  left: -4px;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*Styling for the sidebars*/
+
+.sidebar {
+  position: absolute;
+  background: #ccffe5;
+  height: 100%;
+  width: 400px;
+  top: 0;
+}
+
+#sidebarLeft {
+  left: 0px;
+}
+
+#sidebarRight {
+  right: 0px;
+}
+
+/*--------------------------------------------------------------------------------*/
