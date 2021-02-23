@@ -152,7 +152,7 @@
   width: 380px;
   padding: 10px;
   margin: 5px 0 5px 0;
-  border: 4px solid #33001a;
+  border: 3px solid #33001a;
   background: white;
   color: black;
   font-family: "Poppins", sans-serif;
@@ -162,7 +162,7 @@
 }
 
 .buttons:hover {
-  background: lightgrey;
+  background: hsl(0, 0%, 95%);
 }
 
 #settings {
@@ -211,7 +211,7 @@
   position: relative;
   font-family: "Poppins", sans-serif;
   /*margin: 5px 0 5px 0;*/
-  border: 4px solid #33001a;
+  border: 3px solid #33001a;
   background: white;
   color: black;
   align-items: center;
@@ -223,13 +223,13 @@
 }
 
 #messageSendButton:hover {
-  background: lightgrey;
+  background: hsl(0, 0%, 95%);
 }
 
 #messageEntry {
   position: relative;
   font-family: "Poppins", sans-serif;
-  border: 4px solid #33001a;
+  border: 3px solid #33001a;
   color: black;
   width: 100%;
   left: -4px;
