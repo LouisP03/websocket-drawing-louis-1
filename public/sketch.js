@@ -265,6 +265,8 @@ function mousePressed() {
 				document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
 				document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
 		
+				document.body.style.cursor = "auto";
+
 			} else {
 				noStroke();
 				smooth();
@@ -369,6 +371,7 @@ function toggleDropper() {
 		document.body.style.cursor = "url('dropper-new2.png'), auto";
 	} else {
 		dropperStatus = false;
+		document.body.style.cursor = "auto";
 	}
 }
 
