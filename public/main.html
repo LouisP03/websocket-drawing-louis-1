@@ -28,10 +28,8 @@
     <div id="container">
       <div id="subContainer">
 
-        <h1>Interactive Drawing Application made by Louis Parkes</h1>
-<!--       <h2>Use the slider at the bottom to adjust the width of the brush and the RGB sliders to adjust the brush colour.
-           There is a reset button at the bottom to reset the canvas. To use the colour dropper, tick the checkbox next to the reset button. 
-           Hover over a colour and click to select that colour.</h2>-->
+        <h1>Live Interactive Drawing</h1>
+
         <div id="containerDiv">
           <!--THIS IS WHERE THE CANVAS IS LOCATED-->
         </div>
@@ -59,6 +57,21 @@
           <div id="divButton5" class="InsideContent">
             <button type="button" class="buttons" onclick="resetChatbox();">Reset Chat</button>
           </div>
+          <div class="info"><strong>How to use this app</strong><br/>
+           Use the top slider to adjust the width of your brush. The three sliders below it adjust the amount of red, green, and blue (respectively) in the final selected colour.
+           Use the Reset Button above to reset the canvas. Use the Reset Chat button to reset the chat. To use the colour dropper next to the sliders, simply click on it. Hover over a colour
+           on your canvas to automatically select that colour.
+          </div>
+          <div class="info">
+            <strong>How this app works</strong><br/>
+            This app uses the WebSocket protocol to connect users to a central server. When each user/client updates the canvas or the chat, data is sent as events to the server, which has custom
+            event handlers to broadcast the change data to every user that is connected. The WebSocket protocol provides full-duplex communication over a single TCP connection and changes are broadcast
+            in real time to each user.
+          </div>
+          <div class="info" id="writtenBy">
+            Developed by Louis Parkes
+          </div>
+
           <!--<div id="divCheckbox" class="InsideContent">
             <label class="cbContainer">Colour Dropper
               <input type="checkbox" id="dropperStatus" name="status" value="dropperStatus"></input>

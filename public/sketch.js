@@ -294,6 +294,7 @@ function sendMessage() {
 	var chatDump = document.querySelector('.chat-dump');
 	var div = document.createElement("div");
 	div.classList.add('chat-message');
+	div.style.fontWeight = "bold";
 	if (messageData.clientName === "") {
 		div.innerText = "Anonymous >> " + messageData.msg;
 	} else {

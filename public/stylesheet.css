@@ -151,7 +151,7 @@
   height: 60px;
   width: 380px;
   padding: 10px;
-  margin: 5px 0 5px 0;
+  margin: 2px 0 2px 5px;
   border: 3px solid #33001a;
   background: white;
   color: black;
@@ -280,4 +280,20 @@
   position: absolute;
   left: 20.5%;
   top: 80%;
+}
+
+.info {
+  position: relative;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  /*border-top: 3px solid #33001a;*/
+  border-bottom: 3px solid #33001a;
+  left: 5px;
+  top: 10px;
+}
+
+#writtenBy {
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
 }
