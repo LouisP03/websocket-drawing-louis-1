@@ -304,6 +304,8 @@ function sendMessage() {
 	socket.emit('chat', messageData);
 	console.log("Sent Message: " + message);
 	document.getElementById("messageEntry").value = '';
+	var realHeight = document.querySelector(".chat-dump").scrollHeight;
+	document.querySelector(".chat-dump").scrollTop(realHeight);
 }
 
 
