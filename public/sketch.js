@@ -94,7 +94,7 @@ function setup() {
 
 	document.getElementById("dropperStatus").addEventListener('input', () => {
 		if (document.getElementById("dropperStatus").checked) {
-			document.body.style.cursor = "url('dropper.ico'),auto";
+			document.body.style.cursor = "url('dropper.ico')";
 		};
 	});
 	
