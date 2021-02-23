@@ -66,7 +66,7 @@ io.sockets.on('connection', (socket) => {
 	});
 
 	socket.on('chat', (messageData) => {
-		socket.broadcast.emit('chat', message);
+		socket.broadcast.emit('chat', messageData);
 	});
 
 	socket.on('onResetChat', () => {

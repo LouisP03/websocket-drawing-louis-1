@@ -145,7 +145,7 @@ function setup() {
 		var chatDump = document.querySelector('.chat-dump');
 		var div = document.createElement("div");
 		div.classList.add('chat-message');
-		div.innerText = messageData.clientName + " >> " + message;
+		div.innerText = messageData.clientName + " >> " + messageData.msg;
 		chatDump.appendChild(div);
 	});
 
