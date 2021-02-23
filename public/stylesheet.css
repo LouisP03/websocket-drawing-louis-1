@@ -221,7 +221,7 @@
   width: 380px;
   left: 80%;
   height: 80%;
-  top: 20px;
+  top: 40px;
   border: 5px solid black;
   background: white;
   font-family: monospace;
@@ -258,6 +258,13 @@
   top: 100%;
 }
 
+#divInput1 {
+  position: relative;
+  width: 380px;
+  top: -30px;
+  word-wrap: break-word;
+}
+
 .chat-dump {
   position: absolute;
   height: 100%;
@@ -266,4 +273,12 @@
   overflow-y: auto;
   word-wrap: break-word;
   padding: 0px;
+}
+
+#enterName {
+  display: inline;
+}
+
+#chosenName {
+  display: inline;
 }
