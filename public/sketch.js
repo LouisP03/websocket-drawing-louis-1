@@ -145,7 +145,11 @@ function setup() {
 		var chatDump = document.querySelector('.chat-dump');
 		var div = document.createElement("div");
 		div.classList.add('chat-message');
-		div.innerText = messageData.clientName + " >> " + messageData.msg;
+		if (messageData.clientName === "") {
+			div.innerText = "Anonymous >> " + messageData.msg;
+		} else {
+			div.innerText = messageData.clientName + " >> " + messageData.msg;
+		}
 		chatDump.appendChild(div);
 	});
 
@@ -228,6 +232,10 @@ function mouseDragged() {
 }
 
 function mousePressed() {
+	var c = document.getElementById('dropperStatus');
+	if (c.checked) {
+		document.body.style.cursor = "url('dropper.ico),auto"
+	}
 	if (mouseX >= 0/*(bwidth*-1)*/ && mouseX <= (canvas_width/*+bwidth*/)) {
 		if (mouseY >= 0/*(bwidth*-1)*/ && mouseY <= (canvas_height/*+bwidth*/)) {
 			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
@@ -241,9 +249,8 @@ function mousePressed() {
 				bluevalue: chosenColour.B
 			};
 		
-			var c = document.getElementById('dropperStatus');
 			if (c.checked) {
-				document.getElementById('dropperStatus').style.backround = '#2196f3';
+				//document.getElementById('dropperStatus').style.backround = '#2196f3';
 				var dropperColour = get(parseInt(clickData.x), parseInt(clickData.y));
 		
 				document.getElementById('redc').value = dropperColour[0];
@@ -291,7 +298,11 @@ function sendMessage() {
 	var chatDump = document.querySelector('.chat-dump');
 	var div = document.createElement("div");
 	div.classList.add('chat-message');
-	div.innerText = messageData.clientName + " >> " + messageData.msg;
+	if (messageData.clientName === "") {
+		div.innerText = "Anonymous >> " + messageData.msg;
+	} else {
+		div.innerText = messageData.clientName + " >> " + messageData.msg;
+	}
 	chatDump.appendChild(div);
 	socket.emit('chat', messageData);
 	console.log("Sent Message: " + message);
