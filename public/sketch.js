@@ -366,7 +366,7 @@ function resetChatbox() {
 function toggleDropper() {
 	if (dropperStatus === false) {
 		dropperStatus = true;
-		document.body.style.cursor = "url('dropper.png'), auto";
+		document.body.style.cursor = "url('dropper-new.png'), auto";
 	} else {
 		dropperStatus = false;
 	}
