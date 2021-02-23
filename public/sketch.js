@@ -91,6 +91,12 @@ function setup() {
 		//document.getElementById("chosenName").innerHTML = "Chosen Name: " + name;
 		chosenName = name;
 	});
+
+	document.getElementById("dropperStatus").addEventListener('input', () => {
+		if (document.getElementById("dropperStatus").checked) {
+			document.body.style.cursor = "url('dropper.ico),auto";
+		};
+	});
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
@@ -233,9 +239,7 @@ function mouseDragged() {
 
 function mousePressed() {
 	var c = document.getElementById('dropperStatus');
-	if (c.checked) {
-		document.body.style.cursor = "url('dropper.ico),auto"
-	}
+	
 	if (mouseX >= 0/*(bwidth*-1)*/ && mouseX <= (canvas_width/*+bwidth*/)) {
 		if (mouseY >= 0/*(bwidth*-1)*/ && mouseY <= (canvas_height/*+bwidth*/)) {
 			console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
@@ -269,7 +273,6 @@ function mousePressed() {
 		
 				document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
 				document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + chosenColour.R + ',' + chosenColour.G + ',' + chosenColour.B + ')';
-				document.getElementById('dropperStatus').style.backround = '#eee';
 		
 			} else {
 				noStroke();
