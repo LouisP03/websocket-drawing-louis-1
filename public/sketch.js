@@ -131,6 +131,7 @@ function setup() {
 	});
 
 	socket.on('onResetCanvas', (resetData) => {
+		console.log("testing please tell me you can see this");
 		background(parseInt(resetData.bgColor));
 	});
 
