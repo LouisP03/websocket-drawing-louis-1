@@ -21,7 +21,7 @@ chosenColour = {
 };
 
 function setup() {
-	frameRate(60);
+	frameRate(240);
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
