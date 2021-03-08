@@ -90,6 +90,39 @@ function setup() {
 		chosenName = name;
 	});
 
+	document.getElementById("hexValue").addEventListener('input', () => {
+		var newColour = "";
+		var validValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+		var inp = document.getElementById("hexValue").value;
+		if (inp.length === 6) {
+			for (i = 0; i < 6; i++) {
+				if (validValues.indexOf(inp[i]) !== -1) {
+					newColour += inp[i].toString();
+				};
+			};
+
+			/*
+			var redval = document.getElementById('redc').value;
+			var greenval = document.getElementById('greenc').value;
+			var blueval = document.getElementById('bluec').value;
+	
+			cssRedVarSet(redval);
+			cssGreenVarSet(greenval);
+			cssBlueVarSet(blueval);
+	
+			document.getElementById('colourBlock').style.background = 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+			document.getElementById('subContainer').style['border-left'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+			document.getElementById('subContainer').style['border-right'] = String(bwidth) + 'px solid ' + 'rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')';
+	
+			//console.log('rgb(' + String(redval) + ',' + String(greenval) + ',' + String(blueval) + ')');
+		   
+			chosenColour = {
+			  R: String(redval),
+			  G: String(greenval),
+			  B: String(blueval)
+			};*/
+		};
+	});
 	
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
