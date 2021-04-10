@@ -257,7 +257,7 @@ function mouseDragged() {
 			strokeWeight(parseInt(data.brushWidth));
 			stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 			//line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
-			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+			//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 
 			pos.push(data);
 			console.log(pos);
