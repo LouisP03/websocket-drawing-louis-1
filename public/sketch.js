@@ -125,6 +125,11 @@ function setup() {
 		};
 	});
 	
+	document.getElementById('containerDiv').addEventListener('mouseup', () => {
+		console.log("Detected mouseup event!!!");
+		pos = [];
+	});
+
 	var canvas = createCanvas(canvas_width, canvas_height);
 	canvas.parent('containerDiv');
 	background(255);
