@@ -266,7 +266,7 @@ function mouseDragged() {
 
 			pos.push(data);
 			console.log(pos);
-			if (pos.length >= 4) {
+			if (pos.length >= 3) {
 				noFill();
 				beginShape();
 				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
