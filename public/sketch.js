@@ -260,7 +260,7 @@ function mouseDragged() {
 			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 
 			pos.push(data);
-
+			console.log(pos);
 			if (pos.length % 4 == 0) {
 				noFill();
 				beginShape();
