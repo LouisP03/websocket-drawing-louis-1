@@ -13,7 +13,7 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
-pos = new Set();
+pos = [];
 
 chosenColour = {
 	R: redval,
