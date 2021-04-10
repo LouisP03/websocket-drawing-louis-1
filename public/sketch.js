@@ -261,7 +261,7 @@ function mouseDragged() {
 
 			pos.push(data);
 			console.log(pos);
-			if (pos.length % 4 == 0) {
+			if (pos.length > 4) {
 				noFill();
 				beginShape();
 				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
@@ -271,6 +271,7 @@ function mouseDragged() {
 				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
 				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
 				endShape();
+				pos = [];
 			}
 
 			socket.emit('mouse', data);
