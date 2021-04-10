@@ -13,6 +13,7 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
+pos = new Set();
 
 chosenColour = {
 	R: redval,
@@ -255,8 +256,22 @@ function mouseDragged() {
 			//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 			strokeWeight(parseInt(data.brushWidth));
 			stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-			line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+			//line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+			ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 
+			pos.push(data);
+
+			if (pos.length % 4 == 0) {
+				noFill();
+				beginShape();
+				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
+				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
+				curveVertex(pos[pos.length-3].x, pos[pos.length-3].y);
+				curveVertex(pos[pos.length-2].x, pos[pos.length-2].y);
+				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
+				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
+				endShape();
+			}
 
 			socket.emit('mouse', data);
 		} else {
