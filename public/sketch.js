@@ -271,7 +271,7 @@ function mouseDragged() {
 				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
 				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
 				endShape();
-				pos = [];
+				
 			}
 
 			socket.emit('mouse', data);
