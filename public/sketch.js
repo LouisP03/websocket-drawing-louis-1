@@ -53,6 +53,10 @@ class Queue {
 	value(index) {
 		return this.queue[index];
 	}
+
+	clear() {
+		this.queue = [];
+	}
 };
 
 
@@ -165,6 +169,7 @@ function setup() {
 	document.getElementById('containerDiv').addEventListener('mouseup', () => {
 		console.log("Detected mouseup event!!!");
 		//pos = [];
+		pos.clear();
 	});
 
 	var canvas = createCanvas(canvas_width, canvas_height);
