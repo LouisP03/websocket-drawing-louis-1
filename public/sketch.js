@@ -13,7 +13,6 @@ var redval = document.getElementById('redc').value;
 var greenval = document.getElementById('greenc').value;
 var blueval = document.getElementById('bluec').value;
 
-pos = [];
 
 chosenColour = {
 	R: redval,
@@ -56,7 +55,7 @@ class Queue {
 
 
 
-pos = new Queue();
+var pos = new Queue();
 
 function setup() {
 	frameRate(240);
@@ -164,7 +163,7 @@ function setup() {
 	
 	document.getElementById('containerDiv').addEventListener('mouseup', () => {
 		console.log("Detected mouseup event!!!");
-		pos = [];
+		//pos = [];
 	});
 
 	var canvas = createCanvas(canvas_width, canvas_height);
