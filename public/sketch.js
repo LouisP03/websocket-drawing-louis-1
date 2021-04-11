@@ -282,52 +282,58 @@ function setup() {
 function mouseDragged() {
 	//if (mouseX >= 0/*(bwidth*-1)*/ && mouseX <= (canvas_width/*+bwidth*/)) {
 		//if (mouseY >= 0/*(bwidth*-1)*/ && mouseY <= (canvas_height/*+bwidth*/)) {
-		console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
-		console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
-		//Creating a message to send to server
-		//name and data
+	console.log("Sending: " + mouseX + ", " + mouseY + ' -- ' + width);
+	console.log("Previous mouse pos: -------- : " + pmouseX + ", " + pmouseY);
+	//Creating a message to send to server
+	//name and data
 
-		var data = {
-			x: mouseX,
-			y: mouseY,
-			px: pmouseX,
-			py: pmouseY,
-			brushWidth: bwidth,
-			redvalue: chosenColour.R,
-			greenvalue: chosenColour.G,
-			bluevalue: chosenColour.B
-		};
+	var data = {
+		x: mouseX,
+		y: mouseY,
+		px: pmouseX,
+		py: pmouseY,
+		brushWidth: bwidth,
+		redvalue: chosenColour.R,
+		greenvalue: chosenColour.G,
+		bluevalue: chosenColour.B
+	};
 
+	//noStroke();
+	//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+	strokeWeight(parseInt(data.brushWidth));
+	stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
+	//line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
+	//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
+
+	pos.enqueue(data);
+
+
+
+	if (pos.length == 4) {
 		//noStroke();
-		//fill(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-		//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-		strokeWeight(parseInt(data.brushWidth));
-		stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
-		//line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
-		//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
-
-		pos.enqueue(data);
-
-
-
-		if (pos.length == 7) {
-			//noStroke();
-			//fill(255, 0, 0);
-			//ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
-			//ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
-			//ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
-			//ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
+		//fill(255, 0, 0);
+		//ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
+		//ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
+		//ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
+		//ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
+		strokeWeight(30);
+		point(pos.value(0).x, pos.value(0).y);
+		point(pos.value(1).x, pos.value(1).y);
+		point(pos.value(2).x, pos.value(2).y);
+		point(pos.value(3).x, pos.value(3).y);
+		strokeWeight(15);
 
 
-			noFill();
-			beginShape();
-			curveVertex(pos.value(3).x, pos.value(3).y);
-			curveVertex(pos.value(3).x, pos.value(3).y);
-			curveVertex(pos.value(4).x, pos.value(4).y);
-			curveVertex(pos.value(5).x, pos.value(5).y);
-			curveVertex(pos.value(6).x, pos.value(6).y);
-			curveVertex(pos.value(6).x, pos.value(6).y);
-			endShape();
+		noFill();
+		beginShape();
+		curveVertex(pos.value(0).x, pos.value(0).y);
+		curveVertex(pos.value(0).x, pos.value(0).y);
+		curveVertex(pos.value(1).x, pos.value(1).y);
+		curveVertex(pos.value(2).x, pos.value(2).y);
+		curveVertex(pos.value(3).x, pos.value(3).y);
+		curveVertex(pos.value(3).x, pos.value(3).y);
+		endShape();
 
 		//noStroke();
 		//fill(255, 0, 0);
@@ -338,8 +344,8 @@ function mouseDragged() {
 
 		//removes the last coordinate data as will not be needed for future curveVertex()
 		pos.dequeue();
-				
 	}
+
 	console.log(pos);
 	socket.emit('mouse', data);
 		//} else {
