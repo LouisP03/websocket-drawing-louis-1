@@ -279,7 +279,7 @@ function setup() {
 
 }
 
-
+fired = false;
 
 function mouseDragged() {
 	//if (mouseX >= 0/*(bwidth*-1)*/ && mouseX <= (canvas_width/*+bwidth*/)) {
@@ -336,7 +336,10 @@ function mouseDragged() {
 		curveVertex(pos.value(3).x, pos.value(3).y);
 		curveVertex(pos.value(3).x, pos.value(3).y);
 		endShape();
-		line(initial_mousepressed_position.x, initial_mousepressed_position.y, pos.value(0).x, pos.value(0).y);
+		if (!fired) {
+			line(initial_mousepressed_position.x, initial_mousepressed_position.y, pos.value(0).x, pos.value(0).y);
+			fired = true;
+		}
 
 		//noStroke();
 		//fill(255, 0, 0);
@@ -402,6 +405,7 @@ function mousePressed() {
 				smooth();
 				fill(parseInt(clickData.redvalue), parseInt(clickData.greenvalue), parseInt(clickData.bluevalue));
 				ellipse(clickData.x, clickData.y, clickData.brushWidth, clickData.brushWidth);
+				fired = false;
 				initial_mousepressed_position = clickData;
 				socket.emit('click', clickData);
 			}
