@@ -62,7 +62,7 @@ class Queue {
 
 
 function setup() {
-	frameRate(240);
+	frameRate(60);
 	pos = new Queue();
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
