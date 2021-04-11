@@ -309,12 +309,12 @@ function mouseDragged() {
 			pos.enqueue(data);
 
 			if (pos.length == 4) {
-				noStroke();
-				fill(255, 0, 0);
-				ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
-				ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
-				ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
-				ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
+				//noStroke();
+				//fill(255, 0, 0);
+				//ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
+				//ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
+				//ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
+				//ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
 
 
 				noFill();
@@ -326,13 +326,13 @@ function mouseDragged() {
 				curveVertex(pos.value(3).x, pos.value(3).y);
 				curveVertex(pos.value(3).x, pos.value(3).y);
 				endShape();
-				
-				noStroke();
-				fill(255, 0, 0);
-				ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
-				ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
-				ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
-				ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
+
+				//noStroke();
+				//fill(255, 0, 0);
+				//ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
+				//ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
+				//ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
+				//ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
 
 				//removes the last coordinate data as will not be needed for future curveVertex()
 				pos.dequeue();
