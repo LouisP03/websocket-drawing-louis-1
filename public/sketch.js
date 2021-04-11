@@ -22,30 +22,32 @@ chosenColour = {
 
 class Queue {
 	constructor() {
-		this.queue = {};
-		this.headIndex = 0;
-		this.tailIndex = 0;
+		this.queue = [];
+		//this.headIndex = 0;
+		//this.tailIndex = 0;
 
 	}
 
 	enqueue(item) {
-		this.queue[this.tailIndex] = item;
-		this.tailIndex++;
+		this.queue[this.queue.length] = item;
+		//this.tailIndex++;
 	}
 
 	dequeue() {
-		const item = this.queue[this.headIndex];
-		delete this.queue[this.headIndex];
-		this.headIndex++;
+		//const item = this.queue[this.headIndex];
+		//delete this.queue[this.headIndex];
+		//this.headIndex++;
 		//return item;
+		return this.queue.shift();
 	}
 
 	peek() {
-		return this.queue[this.headIndex];
+		//return this.queue[this.headIndex];
+		return this.queue[0];
 	}
 
 	get length() {
-		return this.tailIndex - this.headIndex;
+		return this.queue.length;
 	}
 
 	value(index) {
@@ -55,10 +57,9 @@ class Queue {
 
 
 
-pos = new Queue();
-
 function setup() {
 	frameRate(240);
+	pos = new Queue();
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
 	  element.addEventListener('input', (e) => {
