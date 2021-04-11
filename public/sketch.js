@@ -55,7 +55,7 @@ class Queue {
 
 
 
-var pos = new Queue();
+pos = new Queue();
 
 function setup() {
 	frameRate(240);
