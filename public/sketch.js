@@ -319,12 +319,12 @@ function mouseDragged() {
 		//ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
 		//ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
 		//ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
-		strokeWeight(30);
-		point(pos.value(0).x, pos.value(0).y);
-		point(pos.value(1).x, pos.value(1).y);
-		point(pos.value(2).x, pos.value(2).y);
-		point(pos.value(3).x, pos.value(3).y);
-		strokeWeight(15);
+		//strokeWeight(30);
+		//point(pos.value(0).x, pos.value(0).y);
+		//point(pos.value(1).x, pos.value(1).y);
+		//point(pos.value(2).x, pos.value(2).y);
+		//point(pos.value(3).x, pos.value(3).y);
+		//strokeWeight(15);
 
 
 		noFill();
@@ -336,6 +336,7 @@ function mouseDragged() {
 		curveVertex(pos.value(3).x, pos.value(3).y);
 		curveVertex(pos.value(3).x, pos.value(3).y);
 		endShape();
+
 		if (!fired) {
 			line(initial_mousepressed_position.x, initial_mousepressed_position.y, pos.value(0).x, pos.value(0).y);
 			fired = true;
