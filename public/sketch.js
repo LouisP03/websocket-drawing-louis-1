@@ -21,6 +21,43 @@ chosenColour = {
 	B: blueval
 };
 
+class Queue {
+	constructor() {
+		this.queue = {};
+		this.headIndex = 0;
+		this.tailIndex = 0;
+
+	}
+
+	enqueue(item) {
+		this.queue[this.tailIndex] = item;
+		this.tailIndex++;
+	}
+
+	dequeue() {
+		const item = this.queue[this.headIndex];
+		delete this.queue[this.headIndex];
+		this.headIndex++;
+		//return item;
+	}
+
+	peek() {
+		return this.queue[this.headIndex];
+	}
+
+	get length() {
+		return this.tailIndex - this.headIndex;
+	}
+
+	value(index) {
+		return this.queue[index];
+	}
+};
+
+
+
+pos = new Queue();
+
 function setup() {
 	frameRate(240);
 	const elements = document.querySelectorAll(".colourSlider");
@@ -264,18 +301,20 @@ function mouseDragged() {
 			//line(parseInt(data.x), parseInt(data.y), parseInt(data.px), parseInt(data.py));
 			//ellipse(data.x, data.y, data.brushWidth, data.brushWidth);
 
-			pos.push(data);
-			console.log(pos);
-			if (pos.length >= 3) {
+			pos.enqueue(data);
+
+			if (pos.length == 4) {
 				noFill();
 				beginShape();
-				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
-				curveVertex(pos[pos.length-4].x, pos[pos.length-4].y);
-				curveVertex(pos[pos.length-3].x, pos[pos.length-3].y);
-				curveVertex(pos[pos.length-2].x, pos[pos.length-2].y);
-				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
-				curveVertex(pos[pos.length-1].x, pos[pos.length-1].y);
+				curveVertex(pos.value(0).x, pos.value(0).y);
+				curveVertex(pos.value(0).x, pos.value(0).y);
+				curveVertex(pos.value(1).x, pos.value(1).y);
+				curveVertex(pos.value(2).x, pos.value(2).y);
+				curveVertex(pos.value(3).x, pos.value(3).y);
+				curveVertex(pos.value(3).x, pos.value(3).y);
 				endShape();
+				//removes the last coordinate data as will not be needed for future curveVertex()
+				pos.dequeue();
 				
 			}
 
