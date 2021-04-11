@@ -309,13 +309,14 @@ function mouseDragged() {
 			pos.enqueue(data);
 
 			if (pos.length == 4) {
+				noStroke();
 				fill(255, 0, 0);
 				ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
 				ellipse(pos.value(1).x, pos.value(1).y, pos.value(1).brushWidth, pos.value(1).brushWidth);
 				ellipse(pos.value(2).x, pos.value(2).y, pos.value(2).brushWidth, pos.value(2).brushWidth);
 				ellipse(pos.value(3).x, pos.value(3).y, pos.value(3).brushWidth, pos.value(3).brushWidth);
 
-
+				strokeWeight(parseInt(data.brushWidth));
 				stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 				noFill();
 				beginShape();
