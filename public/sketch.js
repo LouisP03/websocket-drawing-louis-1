@@ -165,8 +165,8 @@ function setup() {
 			};*/
 		};
 	});
-	
-	document.getElementById('containerDiv').addEventListener('mouseup', () => {
+
+	document.body.addEventListener('mouseup', () => {
 		console.log("Detected mouseup event!!!");
 		//pos = [];
 		pos.clear();
@@ -309,6 +309,13 @@ function mouseDragged() {
 			pos.enqueue(data);
 
 			if (pos.length == 4) {
+				stroke(255, 0, 0);
+				point(pos.value(0).x, pos.value(0).y);
+				point(pos.value(1).x, pos.value(1).y);
+				point(pos.value(2).x, pos.value(2).y);
+				point(pos.value(3).x, pos.value(3).y);
+
+				stroke(parseInt(data.redvalue), parseInt(data.greenvalue), parseInt(data.bluevalue));
 				noFill();
 				beginShape();
 				curveVertex(pos.value(0).x, pos.value(0).y);
