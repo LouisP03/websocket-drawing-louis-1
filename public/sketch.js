@@ -62,7 +62,7 @@ class Queue {
 
 
 function setup() {
-	frameRate(60);
+	frameRate(240);
 	pos = new Queue();
 	const elements = document.querySelectorAll(".colourSlider");
 	elements.forEach(element => {
@@ -322,7 +322,7 @@ function mouseDragged() {
 				pos.dequeue();
 				
 			}
-
+			console.log(pos);
 			socket.emit('mouse', data);
 		} else {
 			return;
