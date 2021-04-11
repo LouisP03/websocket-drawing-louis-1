@@ -310,7 +310,7 @@ function mouseDragged() {
 
 
 
-		if (pos.length == 4) {
+		if (pos.length == 7) {
 			//noStroke();
 			//fill(255, 0, 0);
 			//ellipse(pos.value(0).x, pos.value(0).y, pos.value(0).brushWidth, pos.value(0).brushWidth);
@@ -321,12 +321,12 @@ function mouseDragged() {
 
 			noFill();
 			beginShape();
-			curveVertex(pos.value(0).x, pos.value(0).y);
-			curveVertex(pos.value(0).x, pos.value(0).y);
-			curveVertex(pos.value(1).x, pos.value(1).y);
-			curveVertex(pos.value(2).x, pos.value(2).y);
 			curveVertex(pos.value(3).x, pos.value(3).y);
 			curveVertex(pos.value(3).x, pos.value(3).y);
+			curveVertex(pos.value(4).x, pos.value(4).y);
+			curveVertex(pos.value(5).x, pos.value(5).y);
+			curveVertex(pos.value(6).x, pos.value(6).y);
+			curveVertex(pos.value(6).x, pos.value(6).y);
 			endShape();
 
 		//noStroke();
