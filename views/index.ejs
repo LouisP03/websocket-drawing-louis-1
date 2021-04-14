@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            WebSocket Drawing Application
+        </title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">   
+        <style>
+            #title {
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+            }
+            button {
+                position: fixed;
+                width: 200px;
+                height: 100px;
+                border: none;
+                background-color: #00ffcc;
+                color: black;
+                font-size: 40px;
+                margin: auto;
+            }
+            button:hover {
+                color: black;
+                background-color: #b3fff0;
+            }
+
+        </style>
+        <script src="sketch.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <h1 id="title">Welcome to WebSocket Drawing Application</h1>
+        <button onclick="window.location='main.html'">Click Me</button>
+
+        <form onsubmit="return enterName();">
+            <input type="text" id="name" placeholder="Enter your name"></input>
+            <input type="submit">
+        </form>
+
+        <div id="room-container">
+             
+        </div>
+        
+    </body>
+</html>
