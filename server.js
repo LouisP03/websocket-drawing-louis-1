@@ -6,8 +6,9 @@ var port = process.env.PORT || 3000;
 var app = express();
 var server = app.listen(port);
 
-app.set('views', './views');
-app.set('view engine', 'ejs');
+//app.set('views', './views');
+//app.set('view engine', 'ejs');
+
 app.use(express.static('public'), (req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.header(
@@ -18,18 +19,18 @@ app.use(express.static('public'), (req, res, next) => {
 });
 
 // allow application to use URL encoded parameters instead of body for form
-app.use(express.urlencoded({ extended: true}));
+//app.use(express.urlencoded({ extended: true}));
 
 const rooms = { name: {} };
 
 //routes
-app.get('/', (req, res) => {
-	res.render('index', { rooms: rooms });
-})
+//app.get('/', (req, res) => {
+//	res.render('index', { rooms: rooms });
+//})
 // parameter passed in URL
-app.get('/:room', (req, res) => {
-	res.render('room', { roomName: req.params.room });
-});
+//app.get('/:room', (req, res) => {
+//	res.render('room', { roomName: req.params.room });
+//});
 
 console.log('My socket server is running.');
 
