@@ -178,8 +178,8 @@ function setup() {
 	canvas.parent('containerDiv');
 	background(255);
 	
-	//socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
-	socket = io.connect('127.0.0.1:3000')
+	socket = io.connect('https://websocket-drawing-louis.herokuapp.com/')
+	//socket = io.connect('127.0.0.1:3000')
 	//socket.emit('requestCanvasData');
 /*
 	socket.on('requestCanvasData', (canvasData) => {
